@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "|공부한거 정리 블로그"
+title                    : "공부한거 정리 블로그"
 title_separator          : "-"
-subtitle                 : "Version 0.0.1" # site tagline that appears below site title in masthead
+subtitle                 : "version 0.0.1" # site tagline that appears below site title in masthead
 name                     : "lugan"
 description              : "공부하다가 정리한것들을 올리는 블로그 입니다."
 url                      :  "https://lugan1.github.io" # the base hostname & protocol for your site e.g. "https://lugan1.github.io"
@@ -30,9 +30,9 @@ masthead_title           : # overrides the website title displayed in the masthe
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : lugan # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -95,50 +95,26 @@ analytics:
 # Site Author
 author:
   name             : "lugan"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "안드로이드, 자바, 코틀린을 주로 공부중입니다."
-  location         : "Korean"
+  avatar           : "/assets/image/author/pngegg.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "한신대 컴퓨터공학부 졸업. <br> 현재는 안드로이드, 자바, 코틀린을 주로 공부중입니다."
+  location         : "Republic of korea"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: mailto:lugan2@naver.com
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/lugan1"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://github.com/lugan1"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: https://github.com/lugan1
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
       # url:
 
 
@@ -215,6 +191,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins (previously gems:)
 plugins:
+  - jekyll-admin
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -223,6 +200,7 @@ plugins:
 
 # mimic GitHub Pages with --safe
 whitelist:
+  - jekyll-admin
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -279,6 +257,11 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true # true
       share: true
       related: true
+
+
+jekyll_admin:
+  hidden_links:
+  homepage: ""
