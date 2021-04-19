@@ -28,7 +28,7 @@ h4,
 h5,
 h6 {
   margin: 2em 0 0.5em;
-  line-height: 1.2;
+  line-height: 1.8;
   font-family: $header-font-family;
   font-weight: bold;
 }
@@ -126,6 +126,8 @@ blockquote {
 /* links */
 
 a {
+  /* devinlife : a link 하이퍼링크 밑줄 없애기 */
+  text-decoration: none;
   &:focus {
     @extend %tab-focus;
   }
@@ -183,7 +185,7 @@ td > code {
 hr {
   display: block;
   margin: 1em 0;
-  border: 0;
+  border: 10;
   border-top: 1px solid $border-color;
 }
 
@@ -191,6 +193,7 @@ hr {
 
 ul li,
 ol li {
+  /*왼쪽상단 프로필쪽 마진 정하는거인듯*/
   margin-bottom: 0.5em;
 }
 

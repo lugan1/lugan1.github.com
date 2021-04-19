@@ -1,7 +1,5 @@
 ---
-title: 구글 블로그 에서 깃허브 블로그로 이전하는 방법
-
-excerpt: 첫 포스트 글 테스트 작성.
+title: "[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법"
 categories:
 - github pages
 tags:
@@ -9,7 +7,6 @@ tags:
 - github pages
 - migration
 - jekyll
-
 ---
 
 이제 깃허브 블로그 생성, 포스트글 올리는 법을 알았으니 구글 블로그에 있는 포스트 들을 깃허브 블로그로 이전 시켜야 된다.
