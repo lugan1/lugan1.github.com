@@ -35,7 +35,7 @@ minimal_mistakes 폴더 구조
 <br>|     ├── _base.scss           # base HTML elements 
 <br>|     ├── _buttons.scss        # buttons
 <br>|     ├── _footer.scss         # footer
-<br>|     ├── _masthead.scss       # masthead
+<br>|     ├── _masthead.scss       # 상단 타이틀, 메뉴 레이아웃
 <br>|     ├── _mixins.scss         # mixins (em function, clearfix)
 <br>|     ├── _navigation.scss  # nav links (breadcrumb, priority+, toc, pagination, etc.)
 <br>|     ├── _notices.scss        # notices
