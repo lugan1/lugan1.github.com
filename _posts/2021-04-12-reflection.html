@@ -1,0 +1,13 @@
+---
+title: 자바 리플렉션(Reflection) 공부한거 정리
+date: '2021-04-12T20:31:00.005-07:00'
+categories : 
+- java
+tags:
+- java
+modified_time: '2021-04-12T20:31:47.114-07:00'
+blogger_id: tag:blogger.com,1999:blog-3133736334944064054.post-6521176760649260581
+blogger_orig_url: https://lugan-study-it.blogspot.com/2021/04/reflection.html
+---
+
+<p>&nbsp;자바 리플렉션 정의</p><p>- 구체적인 클래스 타입을 알지 못해도, 그 클래스의 메소드, 타입, 변수들을 접근할 수 있게 해주는 자바 API</p><p><br /></p><p>-&gt; 클래스 타입을 명시하지 않아도(핵심) 그 클래스의 메소드, 타입, 변수들에 접근할수 있게해줌</p><p><br /></p><p>-&gt;리플렉션이란 객체를 통해 클래스의 정보를 분석해 내는 프로그램 기법을 말한다.</p><p><br /></p><p><br /></p><p><br /></p><p>안드로이드에서 Hidden method를 호출할 때 Reflection을 사용할 수 있습니다.&nbsp;</p><p>SDK에 API가 공개되지 않은 경우 Android Studio에서 참조할 수 없어 호출할 수 없지만,&nbsp;</p><p>실제로 hidden API가 존재하기 때문에 리플렉션을 이용해서 호출할 수 있습니다.</p><p><br /></p><p>또는, 테스트 코드 작성을 위해 private 변수를 변경할 때 리플렉션을 사용할 수 있습니다.&nbsp;</p><p>3rd party 라이브러리를 사용하고 이것의 private 변수를 변경하고 싶을 때&nbsp;</p><p>리플렉션을 사용하면 라이브러리 코드 변경없이 값을 변경할 수 있습니다.</p><p><br /></p><p><br /></p><p>ex)</p><p>public class Car{</p><p><span style="white-space: pre;">	</span>public void drive(){</p><p><span style="white-space: pre;">	</span>}</p><p>}</p><p><br /></p><p>public class Man {</p><p><span style="white-space: pre;">	</span>public static void main(String[] args){</p><p><span style="white-space: pre;">		</span>Object car = new Car();</p><p><span style="white-space: pre;">		</span>car.drive(); //컴파일 에러, 클래스생성할때 클래스 타입을 명시하지 않음</p><p><span style="white-space: pre;">	</span>}</p><p>}</p><p><br /></p><p>모든 클래스의 조상인 Object 타입으로 Car 클래스의 인스턴스는 담을 수 있지만,&nbsp;</p><p>사용 가능한 메소드는 Object의 메소드와 변수들 뿐이기 때문,&nbsp; car의 메소드는 사용못함</p><p><br /></p><p><br /></p><p><br /></p><p>이처럼 어떤 클래스 타입인지 명시하지 않을때 리플렉션을 사용함</p><p>대표적으로 프레임워크나 IDE 에서 이러한 동적바인딩을 이용한 기능을 제공하는데,&nbsp;</p><p>InteliJ의 자동완성, 스프링 프레임워크의 어느테이션과 같은 기능이 바로 같은거임</p><p>설계 할때는 어떤 클래스가 사용될지를 모르지만, 리플렉션을 이용해서 코드를 일단 작성하고,&nbsp;</p><p><br /></p><p>실행시점에서 클래스가 어떤 타입을 사용할지 확인해서 활용할수 있게해줌</p><p><br /></p><p><br /></p><p>리플렉션의 원리</p><p><br /></p><p>-&gt; 자바 클래스 파일은 바이트코드로 컴파일되어 Static 영역에 위치하게됨, 따라서 클래스 이름만 알고 있다면,&nbsp;</p><p>언제든 이 영역을 뒤져서 클래스에 대한 정보를 가져올수 있음</p><p><br /></p><p><br /></p><p>아래는 클래스에대한 가져올수 있는 정보들</p><p>ClassName</p><p>Class Midifiers (public, private, synchronized 등)</p><p>Package Info</p><p>Superclass</p><p>Implemented Interfaces</p><p>Constructors</p><p>MethodsFeilds</p><p>Annotations</p>

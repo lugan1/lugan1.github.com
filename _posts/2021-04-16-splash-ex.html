@@ -1,0 +1,13 @@
+---
+title: Splash 화면 (앱 최초 실행시 화면, ex 로고같은거 보여주는거)
+date: '2021-04-16T16:34:00.003-07:00'
+categories : 
+- android
+tags:
+- android
+modified_time: '2021-04-16T16:34:43.439-07:00'
+blogger_id: tag:blogger.com,1999:blog-3133736334944064054.post-2640305577988401436
+blogger_orig_url: https://lugan-study-it.blogspot.com/2021/04/splash-ex.html
+---
+
+<p>&nbsp;Splash 화면</p><p>-&gt; 앱 최초 실행시의 화면</p><p>-&gt; 앱 최초 실행시 로고를 보여주며, 앱 실행에 필요한 데이터 로딩이나 네트워크 처리등을 담당함</p><p>-&gt; 필요한 데이터의 로딩이나 네트워크 처리등이 끝나면 다음 화면으로 이동함.</p><p>-&gt; 주로 SplashActivity 를 따로 만들어서 구현함.</p><p><br /></p><p>ex) 자동로그인 기능 구현시에 SplashActivity 에서 로그인 되어있는지를 검사하여 로그인 되어있으면 MainActivity 로 이동, 그렇지 않으면 LoginActivity 로 이동</p><p>(주로 사용하는 방법은, 로그인시에 SharedPrefrence 파일에 로그인정보를 저장하고, SplashActivity 에서 SharedPrefrence 파일의 데이터를 읽어와서 검사함)</p><p><br /></p>

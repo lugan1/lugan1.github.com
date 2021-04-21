@@ -1,0 +1,14 @@
+---
+title: Parcelable, Serialize 차이
+date: '2021-04-13T02:07:00.001-07:00'
+categories : 
+- android
+tags:
+- android
+- java
+modified_time: '2021-04-13T02:07:22.357-07:00'
+blogger_id: tag:blogger.com,1999:blog-3133736334944064054.post-2850621951597482505
+blogger_orig_url: https://lugan-study-it.blogspot.com/2021/04/parcelable-serialize.html
+---
+
+<p>&nbsp;자바 직렬화 (Serialize) 는 그 클래스 객체의 모든 것들을 직렬화 해줘야됨</p><p><br /></p><p>예를들어 extends B 하면 B클래스까지 직렬화 해줘야 전송이됨</p><p><br /></p><p><br /></p><p>Parcelable 은 필요한것만 직렬화 가능, extends B 해도 상관없음, 제약이 느슨함</p><p><br /></p><p><br /></p><p><br /></p><p>속도는 Parcelable 이 Serialize 보다 더빠름.</p><p>이미지나 객체의 덩치가 커질수록 이득임</p><p><br /></p><p><br /></p><p>대신 부가적으로 필수적으로 적어야될 코드들이 있어서 코드가 길어짐.</p><p><br /></p><p><br /></p><p><br /></p><p>안드로이드 스튜디오 plugin 에서 Parcelable 관련해서 설치하면 generate 메뉴에서 간단하게 코드작성 가능.</p>
