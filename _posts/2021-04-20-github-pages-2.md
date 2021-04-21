@@ -1,10 +1,15 @@
 ---
 title: "[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (2)"
+tags:
+- github pages
+- ruby
+categories:
+- github pages
 ---
 
 저번에
 
-#### [[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (2)](https://lugan1.github.io/github%20pages/migration/)
+#### [[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (1)](https://lugan1.github.io/github%20pages/migration/)
 
 에서 구글 블로그 백업본.xml 파일을 루비 jekyll-import 라이브러리를 이용해 파싱해주어서 각각의 .html 파일로 생성하는데 까지 성공했다.
 

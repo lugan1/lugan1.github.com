@@ -45,7 +45,6 @@ family 의 값들이 차례대로 x 에 들어감.
 family 의 길이 만큼 반복함.
 
 <br>
-<br>
 결과 : 
 
             mother 6
@@ -53,6 +52,29 @@ family 의 길이 만큼 반복함.
 		gentleman 9
 		sexy lady 9
 
+<br>
+range 사용 for 문 예제)
+
+<div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#a71d5d">for</span>&nbsp;i&nbsp;<span style="color:#a71d5d">in</span>&nbsp;<span style="color:#066de2">range</span>(<span style="color:#0099cc">5</span>):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#066de2">print</span>(i)&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">...</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#0099cc">0</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#0099cc">1</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#0099cc">2</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#0099cc">3</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#0099cc">4</span></div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+i 에 값이 0,1,2,3,4 들어가면서 5번 반복.
+
+<br>
+<br>
+
+enumerate
+- 반복문 사용시 몇번째 반복문인지 알아야 될 때가 있는데 이때 사용된다.
+- 인덱스 번호(i), 컬렉션 원소(v) 값을 tuple 형태로 반환한다.
+
+간단 예제 1)
+<br>
+<div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">t&nbsp;<span style="color:#0086b3"></span><span style="color:#a71d5d">=</span>&nbsp;[<span style="color:#0099cc">1</span>,&nbsp;<span style="color:#0099cc">5</span>,&nbsp;<span style="color:#0099cc">7</span>,&nbsp;<span style="color:#0099cc">33</span>,&nbsp;<span style="color:#0099cc">39</span>,&nbsp;<span style="color:#0099cc">52</span>]</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#a71d5d">for</span>&nbsp;p&nbsp;<span style="color:#a71d5d">in</span>&nbsp;enumerate(t):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#066de2">print</span>(p)</div><div style="padding:0 6px; white-space:pre; line-height:130%">...&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">(<span style="color:#0099cc">0</span>,&nbsp;<span style="color:#0099cc">1</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">(<span style="color:#0099cc">1</span>,&nbsp;<span style="color:#0099cc">5</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">(<span style="color:#0099cc">2</span>,&nbsp;<span style="color:#0099cc">7</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">(<span style="color:#0099cc">3</span>,&nbsp;<span style="color:#0099cc">33</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">(<span style="color:#0099cc">4</span>,&nbsp;<span style="color:#0099cc">39</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">(<span style="color:#0099cc">5</span>,&nbsp;<span style="color:#0099cc">52</span>)</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+<br>
+<br>
+
+간단예제 2)
+<br>
+<div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#a71d5d">for</span>&nbsp;i,&nbsp;v&nbsp;<span style="color:#a71d5d">in</span>&nbsp;enumerate(t):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#066de2">print</span>(<span style="color:#63a35c">"index&nbsp;:&nbsp;{},&nbsp;value:&nbsp;{}"</span>.<span style="color:#066de2">format</span>(i,v))</div><div style="padding:0 6px; white-space:pre; line-height:130%">...&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">index&nbsp;:&nbsp;<span style="color:#0099cc">0</span>,&nbsp;value:&nbsp;<span style="color:#0099cc">1</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">index&nbsp;:&nbsp;<span style="color:#0099cc">1</span>,&nbsp;value:&nbsp;<span style="color:#0099cc">5</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">index&nbsp;:&nbsp;<span style="color:#0099cc">2</span>,&nbsp;value:&nbsp;<span style="color:#0099cc">7</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">index&nbsp;:&nbsp;<span style="color:#0099cc">3</span>,&nbsp;value:&nbsp;<span style="color:#0099cc">33</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">index&nbsp;:&nbsp;<span style="color:#0099cc">4</span>,&nbsp;value:&nbsp;<span style="color:#0099cc">39</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">index&nbsp;:&nbsp;<span style="color:#0099cc">5</span>,&nbsp;value:&nbsp;<span style="color:#0099cc">52</span></div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
 <br>
 <br>
 

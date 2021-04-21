@@ -344,3 +344,6 @@ categories : 항목도 없어서 새로 추가해줘야 한다.
 
 
 따로 c 든 java든 python 이든 써서 일괄적으로 폴더내의 파일을 열고 파일내용을 바꾸고 저장하는 코드를 작성해야 될거같다.
+
+
+[[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (2)로 이동](https://lugan1.github.io/github-pages-2/)
