@@ -43,6 +43,7 @@ body {
   }
 
   @include breakpoint($x-large) {
+    //layout page 에서의 크기 설정 (창크기가 x-large 크기일때. 즉 전체화면)
     width: calc(100% - #{$right-sidebar-width});
     padding-right: $right-sidebar-width;
   }
@@ -69,7 +70,7 @@ body {
 }
 
 .page__title {
-  margin-top: 0;
+  margin-top: 0; //수정해도 값이 바뀌는게 없음
   line-height: 1;
 
   & + .page__meta {
@@ -79,7 +80,7 @@ body {
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: $type-size-4;
+  font-size: $type-size-4; //값을 수정해도 바뀌는 것이 없음.
 }
 
 .page__content {
@@ -93,7 +94,7 @@ body {
 			position: relative;
 			left: 0.5em;
 			opacity: 0;
-			font-size: 0.8em;
+			font-size: 0.8em; //about page 의 폰트 사이즈가 커짐.
 			-webkit-transition: opacity 0.2s ease-in-out 0.1s;
 			-moz-transition: opacity 0.2s ease-in-out 0.1s;
 			-o-transition: opacity 0.2s ease-in-out 0.1s;
@@ -108,7 +109,7 @@ body {
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: 1em; //about page, 포스트 내용의 글씨가 커짐
   }
 
   /* paragraph indents */
@@ -135,9 +136,9 @@ body {
   }
 
   dt {
-    margin-top: 1em;
+    margin-top: 1em; //바뀌는게 없음. 뭐가 바뀌는지 모르겠음.
     font-family: $sans-serif;
-    font-weight: bold;
+    font-weight: bold; //바뀌는게 없음. 뭐가 바뀌는지 모르겠음.
   }
 
   dd {
@@ -159,7 +160,7 @@ body {
 
 .page__hero {
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: 2em; //layout page 의 아랫 부분과의 마진.
   @include clearfix;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
@@ -205,7 +206,7 @@ body {
     }
 
     .page__title {
-      font-size: $type-size-2;
+      font-size: $type-size-2; //바뀌는게 없음. 뭐가 바뀌는지 모르겠음.
 
       @include breakpoint($small) {
         font-size: $type-size-1;
@@ -279,7 +280,7 @@ body {
    ========================================================================== */
 
 .page__meta {
-  margin-top: 2em;
+  margin-top: 2em; //값이 크면 클수록 about page 에서 아랫부분과의 거리가 멀어짐
   color: $muted-text-color;
   font-family: $sans-serif;
   font-size: $type-size-6;
@@ -294,7 +295,7 @@ body {
 }
 
 .page__meta-title {
-  margin-bottom: 10px;
+  margin-bottom: 10px; //값을 바꿔도 바뀌는게 없음
   font-size: $type-size-6;
   text-transform: uppercase;
 }
@@ -306,7 +307,7 @@ body {
 }
 
 /*
-   Page taxonomy
+   Page taxonomy (포스트글의 category, tags 분류 아이콘들)
    ========================================================================== */
 
 .page__taxonomy {
@@ -320,12 +321,14 @@ body {
 }
 
 .page__taxonomy-item {
+  //포스트글의 category, tags 분류들 아이콘의 속성설정들
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 8px;
   padding: 5px 10px;
   text-decoration: none;
   border: 1px solid mix(#000, $border-color, 25%);
+  //border: 200px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
 
   &:hover {
@@ -501,7 +504,7 @@ body {
 }
 
 /*
-   Related
+   Related (포스트글 최하단의 연관된 포스트 글들 속성 설정)
    ========================================================================== */
 
 .page__related {

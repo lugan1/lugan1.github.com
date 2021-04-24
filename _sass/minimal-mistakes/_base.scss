@@ -9,6 +9,8 @@ html {
 }
 
 body {
+  //모든 아이템들에 대한 통일된 설정인듯. 만약 margin 0 으로 하면 화면에 보이는 모든 아이템들이 margin 0이됨.
+  //margin: 0;
   margin: 0;
   padding: 0;
   color: $text-color;
@@ -27,6 +29,7 @@ h3,
 h4,
 h5,
 h6 {
+  //처음 홈화면에서의 각 post들 레이아웃 설정
   margin: 2em 0 0.5em;
   line-height: 1.8;
   font-family: $header-font-family;
@@ -126,7 +129,7 @@ blockquote {
 /* links */
 
 a {
-  /* devinlife : a link 하이퍼링크 밑줄 없애기 */
+  /* devinlife : a link 하이퍼링크 밑줄 없애기, text-decoration: : none; */
   text-decoration: none;
   &:focus {
     @extend %tab-focus;
@@ -193,7 +196,8 @@ hr {
 
 ul li,
 ol li {
-  /*왼쪽상단 프로필쪽 마진 정하는거인듯*/
+  /*왼쪽상단 프로필의 아이템들(github, email 등) 마진 정하는거인듯*/
+  //margin-bottom: 0.5em;
   margin-bottom: 0.5em;
 }
 

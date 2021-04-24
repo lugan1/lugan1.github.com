@@ -17,9 +17,9 @@
   // }
 
   @include breakpoint($large) {
-    float: left;
-    width: calc(#{$right-sidebar-width-narrow} - 1em);
-    opacity: 0.75;
+    float: left; //사이드바 위치. 현재는 왼쪽에 표시됨. 프로필부분.
+    width: calc(#{$right-sidebar-width-narrow} - 1em);  //창 크기가 large 사이즈일때의 사이드바 너비
+    opacity: 0.75; //투명도
     -webkit-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out;
 
@@ -37,7 +37,8 @@
   }
 
   @include breakpoint($x-large) {
-    width: calc(#{$right-sidebar-width} - 1em);
+    //x-large 즉 전체크기일때의 설정
+    width: calc(#{$right-sidebar-width} - 1em); //em의 크기가 클수록 사이드바 너비가 줄어들음. 단. 줄어든대신 남은부분은 여백으로 남겨짐.
   }
 
   > * {
@@ -71,7 +72,7 @@
   }
 }
 
-.sidebar__right {
+.sidebar__right { //사이드바 오른쪽 설정인듯.
   margin-bottom: 1em;
 
   @include breakpoint($large) {

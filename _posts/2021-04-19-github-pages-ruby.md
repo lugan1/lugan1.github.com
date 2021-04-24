@@ -42,3 +42,22 @@ categories:
   --jit- [option] 옵션으로 JIT 활성화 (실험적)
   -h이 ​​메시지를 표시합니다. --help for more info
 ```
+
+
+#### 루비 문법정리
+-------------
+
+yield 사용 간단예제
+
+```ruby
+def my_method
+  puts "reached the top"
+  yield
+  puts "reached the bottom"
+end
+my_method do
+  puts "reached yield"
+end
+```
+
+<br> 루비는 함수 실행시에 함수이름 do 하고 실행하는듯
