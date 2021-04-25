@@ -1,5 +1,6 @@
 ---
-title: "[github pages] jekyll_admin 에서 자동으로 date, 수정된 날짜 넣는방법"
+classes : wide
+title: "jekyll_admin 에서 자동으로 date, 수정된 날짜 넣는방법"
 tags:
 - github pages
 - ruby

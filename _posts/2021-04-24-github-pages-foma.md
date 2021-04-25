@@ -1,5 +1,6 @@
 ---
-title: "[github pages] 포스트글에 표기되는 date 포맷 변경하는 방법"
+classes : wide
+title: "포스트글에 표기되는 date 포맷 변경하는 방법"
 tags:
 - github pages
 - minimal_mistakes

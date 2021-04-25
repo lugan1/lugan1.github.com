@@ -1,5 +1,5 @@
 ---
-title: "[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (1)"
+title: "구글 블로그 에서 깃허브 블로그로 이전하는 방법 (1)"
 categories:
 - github pages
 tags:
@@ -144,6 +144,7 @@ bash 에서는 ruby 가 설치 안되어있다고 나와서 ruby를 설치해야
 를 따라서 ruby를 설치한다.
 
 
+classes : wide
 `sudo apt-get update`
 
 

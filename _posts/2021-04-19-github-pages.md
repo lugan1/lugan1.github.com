@@ -1,5 +1,5 @@
 ---
-title: "[github pages] 포스트 제목에 하이퍼링크 밑줄 없애는 방법"
+title: "포스트 제목에 하이퍼링크 밑줄 없애는 방법"
 tags:
 - minimal_mistakes
 - scss

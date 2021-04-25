@@ -1,5 +1,5 @@
 ---
-title: "[github pages] minimal_mistakes 커스텀 스킨하는법"
+title: "minimal_mistakes 커스텀 스킨하는법"
 tags:
 - jekyll
 - VScode

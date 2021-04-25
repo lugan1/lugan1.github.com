@@ -1,5 +1,5 @@
 ---
-title: "[github pages] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (2)"
+title: "구글 블로그 에서 깃허브 블로그로 이전하는 방법 (2)"
 tags:
 - github pages
 - ruby

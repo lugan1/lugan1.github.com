@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "custom" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "lugan"
   avatar           : "/assets/image/author/pngegg.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "뭐든지 가리지 않고 공부하는 개발자입니다. <br><br> 현재는 안드로이드, 자바, 코틀린을 주로 공부중입니다."
+  bio              : "뭐든지 가리지 않고 공부하는 개발자입니다."
   location         : "Republic of korea"
   email            :
   links:

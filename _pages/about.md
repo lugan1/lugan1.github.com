@@ -2,6 +2,7 @@
 title: "이 블로그는..."
 permalink: /about/
 layout: single
+classes: wide
 ---
 
 ## 짬짬히 공부하면서 **메모한 것**들이나, **정리한 것**들을 올리는 **블로그**입니다.  

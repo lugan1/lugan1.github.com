@@ -1,5 +1,5 @@
 ---
-title: "[python] 기본 문법 정리"
+title: "python-기본 문법 정리"
 tags:
 - python
 categories:

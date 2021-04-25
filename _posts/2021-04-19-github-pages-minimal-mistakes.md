@@ -49,6 +49,7 @@ categories:
 <br>├── head.html
 <br>├── masthead.html
 <br>├── nav_list
+classes : wide
 <br>├── page_date.html                         #post글들의 날짜 포맷설정. 
 <br>├── page_hero.html
 <br>├── page_hero_video.html
@@ -104,7 +105,7 @@ minimal_mistakes 폴더 구조
 <br>|     ├── _mixins.scss         # mixins (em function, clearfix)
 <br>|     ├── _navigation.scss  # nav links (breadcrumb, priority+, toc, pagination, etc.)
 <br>|     ├── _notices.scss        # notices
-<br>|     ├── _page.scss           # pages
+<br>|     ├── _page.scss           # 전체 페이지. 즉 전체 사이트 form 설정, 여기서 양옆 margin 설정가능
 <br>|     ├── _print.scss          # print styles
 <br>|     ├── _reset.scss          # reset
 <br>|     ├── _sidebar.scss        # 양옆의 사이드바. 프로필부분

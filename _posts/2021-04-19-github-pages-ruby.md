@@ -1,5 +1,5 @@
 ---
-title: "[github pages] [ruby] 루비 커맨드 명령어 정리"
+title: "루비 커맨드 명령어 정리"
 tags:
 - ruby
 - github pages

@@ -1,5 +1,5 @@
 ---
-title: "[github pages] jekyll-admin 폴더경로"
+title: "jekyll-admin 폴더경로"
 tags:
 - jekyll-admin
 - ruby

@@ -1,5 +1,5 @@
 ---
-title: "[github pages] jekyll admin 주소로 글작성시 tag, 카테고리 넣는법"
+title: "jekyll admin 주소로 글작성시 tag, 카테고리 넣는법"
 tags:
 - jekyll
 - jekyll_admin

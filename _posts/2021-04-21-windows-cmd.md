@@ -1,5 +1,5 @@
 ---
-title: "[windows] cmd 스크립트 파일 만들기"
+title: "cmd 스크립트 파일 만들기"
 tags:
 - windows
 - batch

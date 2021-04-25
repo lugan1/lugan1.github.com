@@ -3,15 +3,15 @@
    ========================================================================== */
    
 /* Colors */
-$text-color: #000 !default;
-$muted-text-color: $text-color !default;
+$text-color: rgb(0, 0, 0) !default;
+$muted-text-color: #3f3f3f !default;    /*날짜, 읽는시간, 카테고리, 태그, 포스트글 하단의 이전 다음 배경 컬러*/
 $primary-color: #ff0000 !default;
 $border-color: mix(#fff, $text-color, 75%) !default;
-$footer-background-color: #000 !default;
-$link-color: #000000 !default;
-$masthead-link-color: $text-color !default;
-$masthead-link-color-hover: $text-color !default;
-$navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+$footer-background-color: rgb(80, 80, 80) !default;         /*footer 컬러*/
+$link-color: #005b77 !default;               /*하이퍼 링크 컬러*/
+$masthead-link-color: $text-color !default;    /*상단 메뉴들, 타이틀 컬러*/
+$masthead-link-color-hover: rgb(107, 107, 107) !default;     /*상단 타이틀, 메뉴들 마우스 올릴때 컬러*/
+$navicon-link-color-hover: mix(#005b77, #535353, 80%) !default;    /*포스트글 하단의 이전, 다음 마우스 올려뒀을때 컬러*/
 
 /* contrast syntax highlighting (base16) */
 $base00: #000000 !default;
