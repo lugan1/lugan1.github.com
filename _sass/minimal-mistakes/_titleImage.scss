@@ -1,0 +1,29 @@
+.title_image {
+	width: 100%;
+    height: 350px;
+	border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+	position: relative;
+}
+.t_img {
+	width: 100%;
+    height: 350px;
+	vertical-align: middle;
+}
+.t_text {
+    width: auto;
+    height: auto;
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50% );
+}

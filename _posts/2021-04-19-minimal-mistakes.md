@@ -1,12 +1,13 @@
 ---
-title: "minimal_mistakes 커스텀 스킨하는법"
+title: "[Blog] minimal_mistakes 커스텀 스킨하는법"
+classes : wide
 tags:
 - jekyll
 - VScode
 - scss
 - minimal_mistakes
 categories:
-- github pages
+- Blog
 ---
 
 minimal mistakes 테마를 사용하고 있는데 contrast 스킨을 사용하면 포스트 제목이 파란색으로 뜨는게 마음에 안들어서, 

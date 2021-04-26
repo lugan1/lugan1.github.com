@@ -1,13 +1,13 @@
 ---
-classes : wide
-title: "포스트글에 표기되는 date 포맷 변경하는 방법"
+title: "[Blog] 포스트글에 표기되는 date 포맷 변경하는 방법"
 tags:
 - github pages
 - minimal_mistakes
 categories:
-- github pages
-date: '2021-04-24 21:12:20 +0900'
-last_modified_at: '2021-04-25 01:36:26 +0900'
+- Blog
+classes : wide
+date: 2021-04-24 21:12:20 +0900
+last_modified_at: 2021-04-25 01:36:26 +0900
 ---
 
 사이트에 영문으로 날짜표기되는게 마음에 안들어서 한글로 표기되도록 date 포맷을 변경했다.

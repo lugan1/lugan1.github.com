@@ -1,10 +1,11 @@
 ---
-title: "[github pages] repository 폴더구조"
+title: "[Blog] repository 폴더구조"
+classes : wide
 tags:
 - minimal_mistakes
 - github pages
 categories:
-- github pages
+- Blog
 ---
 
 \_includes
@@ -33,9 +34,9 @@ categories:
 <br>|  └── lunar-search-scripts.html
 <br>|  └── search_form.html
 <br>├── analystics.html
-<br>├── archive-single.html
+<br>├── archive-single.html             #카테고리, 최근포스트, 태그스 글 등의 각각의 리스트 아이템들 설정
 <br>├── author-profile.html
-<br>├── author-profile-custom-links.html
+<br>├── author-profile-custom-links.html    #왼쪽 사이드바 프로필 레이아웃의 커스텀 링크 설정
 <br>├── breadcrumbs.html
 <br>├── browser-upgrade.html
 <br>├── category-list.html

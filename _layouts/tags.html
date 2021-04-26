@@ -30,10 +30,12 @@ layout: archive
   {% for tag in site.tags %}
     {% if tag[1].size == i %}
       <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
-        <h2 class="archive__subtitle">{{ tag[0] }}</h2>
+        <h2 class="archive__subtitle"><font size="10">{{ tag[0] }}</font></h2> <!--각 태그 제목들 -->
         <div class="entries-{{ entries_layout }}">
           {% for post in tag.last %}
+          <h6 margin-top:1em>
             {% include archive-single.html type=entries_layout %}
+          </h6>
           {% endfor %}
         </div>
         <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>

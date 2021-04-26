@@ -4,16 +4,16 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        {% unless logo_path == empty %}
+        {% unless logo_path == empty %}   <!-- 만약 로고 경로가 비어있지 않다면-->
           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <a class="site-title" href="{{ '/' | relative_url }}">   <!--사이트 상단의 타이틀 처리-->
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
+            <li class="masthead__menu-item">      <!--사이트상단의 메뉴 처리-->
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
@@ -35,3 +35,13 @@
     </div>
   </div>
 </div>
+
+<div class="title_image">
+  <nav id="site-nav" class="splash-nav">
+    <div class="t_img"><img src="/assets/image/splash.png"></div>
+    <div class="t_text">
+      <p>Studying.... Studying....</p>
+    </div>
+  </nav>
+</div>
+

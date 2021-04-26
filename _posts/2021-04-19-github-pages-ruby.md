@@ -1,5 +1,6 @@
 ---
-title: "루비 커맨드 명령어 정리"
+title: "[Ruby] 루비 커맨드 명령어 정리"
+classes : wide
 tags:
 - ruby
 - github pages
@@ -7,7 +8,7 @@ tags:
 - blogger
 - jekyll
 categories:
-- github pages
+- Blog
 - ruby
 ---
 

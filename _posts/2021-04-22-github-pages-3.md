@@ -1,10 +1,12 @@
 ---
-title: "구글 블로그 에서 깃허브 블로그로 이전하는 방법 (3)"
+title: "[Blog] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (3)"
+classes : wide
 tags:
+- google Blogger
 - github pages
 - python
 categories:
-- github pages
+- Blog
 ---
 
 이전 포스트에서 구글 백업본 파일을 각각의 html 파일로 만드는데 까지 성공했다. 하지만 categories 각각의 html 파일들에게 categories 항목을 추가해줘야 됬다.

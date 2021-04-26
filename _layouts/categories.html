@@ -30,13 +30,13 @@ layout: archive
   {% for category in site.categories %}
     {% if category[1].size == i %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
-        <h2 class="archive__subtitle">{{ category[0] }}</h2>
+        <h2 class="archive__subtitle"><font size="40">{{ category[0] }}</font></h2>  <!--각 카테고리 타이틀 제목-->
         <div class="entries-{{ entries_layout }}">
           {% for post in category.last %}
+          <h6 margin-top:1em>
             {% include archive-single.html type=entries_layout %}
+          </h6>
           {% endfor %}
-          <br>
-          <br>
         </div>
         <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
       </section>

@@ -1,7 +1,8 @@
 ---
-title: "구글 블로그 에서 깃허브 블로그로 이전하는 방법 (1)"
+title: \[Blog] 구글 블로그 에서 깃허브 블로그로 이전하는 방법 (1)
+classes : wide
 categories:
-- github pages
+- Blog
 tags:
 - blogger
 - github pages

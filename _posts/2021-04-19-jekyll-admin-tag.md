@@ -1,10 +1,11 @@
 ---
-title: "jekyll admin 주소로 글작성시 tag, 카테고리 넣는법"
+title: "[Blog] jekyll admin 주소로 글작성시 tag, 카테고리 넣는법"
+classes : wide
 tags:
 - jekyll
 - jekyll_admin
 categories:
-- github pages
+- Blog
 ---
 
 admin 주소로 포스트글 작성은 편하게 되는데

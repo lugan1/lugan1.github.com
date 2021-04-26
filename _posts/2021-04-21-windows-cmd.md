@@ -1,5 +1,6 @@
 ---
-title: "cmd 스크립트 파일 만들기"
+title: "[Windows] cmd 스크립트 파일 만들기"
+classes : wide
 tags:
 - windows
 - batch

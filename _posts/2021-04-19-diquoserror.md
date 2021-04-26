@@ -1,7 +1,8 @@
 ---
-title: "[github pages] disquos 덧글 기능 추가시 We were unable to load Disqus 오류 해결방법"
+title: "[Blog] We were unable to load Disqus 오류 해결방법"
+classes : wide
 categories:
-- github pages
+- Blog
 tags:
 - markdown
 - md

@@ -1,11 +1,12 @@
 ---
-title: "포스트 제목에 하이퍼링크 밑줄 없애는 방법"
+title: "[Blog] 포스트 제목에 하이퍼링크 밑줄 없애는 방법"
+classes : wide
 tags:
 - minimal_mistakes
 - scss
 - github pages
 categories:
-- github pages
+- Blog
 ---
 
 홈 화면과 포스트 리스트에서 제목에 하이퍼링크 밑줄이 생기는게 약간 거슬려서 하이퍼링크 밑줄을 없앨수 있는 방법 어디 없나 하고 찾아보았다.

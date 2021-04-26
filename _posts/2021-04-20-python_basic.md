@@ -1,5 +1,6 @@
 ---
-title: "python-기본 문법 정리"
+title: "[Python] 기본 문법 정리"
+classes : wide
 tags:
 - python
 categories:

@@ -1,11 +1,12 @@
 ---
-title: "jekyll-admin 폴더경로"
+title: "[Blog] jekyll-admin 폴더경로"
+classes : wide
 tags:
 - jekyll-admin
 - ruby
-- github pages
+- Blog
 categories:
-- github pages
+- Blog
 ---
 
 jekyll admin 플러그인을 설치해서 localhost:4000/admin 으로 admin 페이지에 들어갈수 있는데

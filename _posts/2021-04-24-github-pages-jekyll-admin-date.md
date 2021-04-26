@@ -1,12 +1,12 @@
 ---
 classes : wide
-title: "jekyll_admin 에서 자동으로 date, 수정된 날짜 넣는방법"
+title: "[Blog] jekyll_admin 에서 자동으로 date, 수정된 날짜 넣는방법"
 tags:
 - github pages
 - ruby
 - jekyll_admin
 categories:
-- github pages
+- Blog
 date: '2021-04-24 09:38:51 +0900'
 last_modified_at: '2021-04-24 21:25:36 +0900'
 ---
