@@ -1,15 +1,45 @@
 .title_image {
-	width: 100%;
-    height: 350px;
-	border-top: 1px solid rgba(255, 255, 255, 0.6);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-	position: relative;
+    max-width: 100%;
+    height: 380px;      //height 380 일시에 너비 1520, 높이 1140 정도의 4:3 비율의 이미지 필요
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position:relative;
+    overflow:hidden;                //넘치는 부분은 자름
 }
 .t_img {
-	width: 100%;
-    height: 350px;
-	vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
+    //height: auto;
+    position:absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(50%,50%); 
+    -ms-transform: translate(50%,50%); 
+    transform: translate(50%,50%);
+
+    //background-image: url("/assets/image/12904.jpg");
+    //top:50%;            //상단으로부터 50% 떨어진 곳에 위치
+    //transform: translateY(-50%); //하단으로부터 50% 떨어진 곳에 위치
+    //vertical-align: middle; //1200 300, 
+    //background-size: contain; //이미지 사이즈대로 블록사이즈 결정.
+    //background-size: cover;  //블록사이즈에 모두 커버되도록 이미지 사이즈를 결정함.
+    //background-repeat: no-repeat;
 }
+
+.title_image .t_img img{
+    object-fit: cover;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    max-width: 100%; 
+    height: auto; 
+    -webkit-transform: translate(-50%,-50%); 
+    -ms-transform: translate(-50%,-50%); 
+    transform: translate(-50%,-50%);
+}
+
 .t_text {
     width: auto;
     height: auto;
@@ -25,5 +55,5 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate( -50%, -50% );
+	transform: translate( -50%, -50% ); //위치이동, 왼쪽 50%이동, 위쪽 50%이동, -는 왼쪽, +는 오른쪽, -는 위쪽 +는 밑에쪽
 }
