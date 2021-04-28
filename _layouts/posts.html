@@ -6,7 +6,8 @@ layout: archive
 
 <ul class="taxonomy__index">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-  {% for year in postsInYear %}
+  {% assign postsInYear_Month = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
+  {% for year in postsInYear_Month %}
     <li>
       <a href="#{{ year.name }}">
         <strong>{{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
@@ -17,14 +18,42 @@ layout: archive
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% assign postsByYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-{% for year in postsByYear %}
-  <section id="{{ year.name }}" class="taxonomy__section">
-    <h2 class="archive__subtitle">{{ year.name }}</h2>
+{% assign postsByYear_Month = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
+<!--assign 변수선언, where 필터 : 배열안에서 특정키와 밸류를 가진 객체를 뽑아낸다.-->
+<!-- where expression, where_exp : 배열 안에서 표현식이 참인 객체들을 반환한다.-->
+<!-- group by : 배열안의 항목들을 특정 속성으로 그룹 짓는다.-->
+<!-- grup by expression, group_by_exp : 배열안의 항목들을 liquid 표현식을 사용해 그룹짓는다. -->
+
+<!--
+postsByYear %Y
+{"name"=>"2021", "items"=>[#, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #], "size"=>38}
+{"name"=>"2020", "items"=>[#, #], "size"=>2}
+  
+
+postsByMonth %m
+{"name"=>"04", "items"=>[#, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #], "size"=>38}
+{"name"=>"03", "items"=>[#], "size"=>1}
+{"name"=>"01", "items"=>[#, #], "size"=>2}
+{"name"=>"06", "items"=>[#], "size"=>1}
+
+%Y-%m
+{"name"=>"2021-04", "items"=>[#, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #, #], "size"=>38}
+{"name"=>"2021-03", "items"=>[#], "size"=>1}
+{"name"=>"2021-01", "items"=>[#], "size"=>1}
+{"name"=>"2020-06", "items"=>[#], "size"=>1}
+{"name"=>"2020-01", "items"=>[#], "size"=>1}
+-->
+
+
+<!--위에 인덱스에서 클릭시에 section id 까지 스크롤이동-->
+{% for year_month in postsByYear_Month %}
+  <section id="{{ year_month.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year_month.name }}</h2>
     <div class="entries-{{ entries_layout }}">
-      {% for post in year.items %}
+      {% for post in year_month.items %}
         {% include archive-single.html type=entries_layout %}
       {% endfor %}
     </div>
-    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
 {% endfor %}

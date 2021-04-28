@@ -9,7 +9,7 @@ categories:
 - Blog
 date: '2021-04-26 10:13:27 +0900'
 classes: wide
-last_modified_at: '2021-04-27 06:41:37 +0900'
+last_modified_at: '2021-04-27 11:44:47 +0900'
 ---
 
 #### 이미지 사이즈 맞추는법 object fit    <https://nykim.work/86>
@@ -20,9 +20,20 @@ last_modified_at: '2021-04-27 06:41:37 +0900'
 
 <br>
 <br>
-step 1. 먼저 너비 1520, 높이 1140 정도의 4:3 비율의 이미지를 준비한다. (그냥 웰페이퍼 이미지 아무거나 가져와서 4:3비율만큼 자르기한다.)
+step 1. 먼저 너비 1520, 높이 1140 정도의 4:3 비율의 이미지를 준비한다. (그냥 웰페이퍼 이미지 아무거나 가져와서 4:3비율만큼 자르기한다.)<br>
 <br>
 step 2. 다음과 같은 파일을 수정한다. \_includes/mastehead.html
+<br>
+(만약 홈화면에서만 타이틀 이미지 뜨게하고, 포스트글에서는 안뜨게 하려면 \_mastehead.html 말고, \_layout 폴더에 archive.html  파일을 수정하면 된다.)
+<br>
+....<br>
+include page__hero_video.html <br>
+...<br>
+end if<br>
+
+밑에다가 아래의 코드 삽입하면 된다.
+
+<br>
 <br>
 step 3. 맨 아랫줄에 다음과 같은 코드를 삽입한다. 저장한다.
 <br>
