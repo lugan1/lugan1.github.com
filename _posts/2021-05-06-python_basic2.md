@@ -381,6 +381,7 @@ print(n, m, k) #3, 5, 7
 - 입력후 엔터키가 줄바꿈 기호로 입력되기 때문에 rstrip() 함수를 이용해서 공백 문자를 제거해야됨
 <br>
 <br>
+
 ```python
 import sys
 
@@ -388,6 +389,7 @@ import sys
 data = sys.stdin.readline().rstrip()
 print(data)
 ```
+
 <br>
 <br>
 
