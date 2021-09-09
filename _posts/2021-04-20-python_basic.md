@@ -1,10 +1,12 @@
 ---
-title: "[Python] 기본 문법 정리"
-classes : wide
+title: "[Python] 기본 문법 정리 (1)"
+classes: wide
 tags:
 - python
 categories:
 - python
+- 코딩테스트
+last_modified_at: '2021-05-06 13:06:59 +0900'
 ---
 
 <https://wikidocs.net/book/1>
