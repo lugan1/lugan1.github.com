@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "lugan"
   avatar           : "/assets/image/author/pngegg.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "뭐든지 가리지 않고 공부하는 개발자입니다."
+  bio              : "주 언어는 java, kotlin 입니다."
   location         : "Republic of korea"
   email            :
   links:
