@@ -41,6 +41,7 @@ List<E> 변수명 = new ArrayList<E>();
 
 Array List 메소드
 <br>
+
 |메소드명|내용|
 |-----|------|
 |boolean add(E e)|끝에 요소추가|
@@ -132,6 +133,7 @@ public class MultiThreadSample implemnets Runnable{
 
 스레드 풀 기능을 제공하는 인터페이스
 <br>
+
 |인터페이스|설명|
 |---------|----|
 |ExcutorService|스레드 수를 제한|
