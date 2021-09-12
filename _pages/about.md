@@ -5,16 +5,19 @@ layout: single
 classes: wide
 ---
 
-## 프로필
-- 한신대 컴퓨터 공학 졸업 (2019)
-- AWS, putty 사용 경험 (학교안내 챗봇 프로젝트)
-- Java(Jpanel, JDBC, JSP) 프로젝트 경험
-- Android(BLE통신, API통신) 앱 프로젝트 경험
-- Python, Pyqt(리눅스 방화벽 규칙 생성기) 프로젝트 경험
-- MFC(계산기) 과제 경험
-- C# .net (CRUD, MYSQL) 과제 경험
+## 개발 공부 및 자습 노트 블로그입니다
+(2021년 4월 28일 블로그 생성)
+<br>
+<br>
+앞으로 다룰 포스트 주제들
+- java
+- android
+- javaScript
+- React, Angular, Vue.js
+- 그외 지식들
 
-
+<br>
+<br>
 <br>
 
 
@@ -23,3 +26,5 @@ classes: wide
 - 오늘 할일의 체크리스트를 매일 작성
 - 딴짓 시간은 최대 20분 이하로
 - 항상 겸손하자. 자만하지 말자.
+
+<br>
