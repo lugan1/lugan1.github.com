@@ -18,6 +18,8 @@ classes: wide
 
 4. 다음과 같은 간단예제 코드 입력
 
+5. 완료된 파일을 직접 크롬브라우저로 열거나, Ctrl+ Alt+ O를 눌러 크롬브라우저로 열음
+
 
 ```javascript
 <!DOCTYPE html>
@@ -42,5 +44,3 @@ classes: wide
 </body>
 </html>
 ``` 
-
-5. 완료된 파일을 직접 크롬브라우저로 열거나, Ctrl+ Alt+ O를 눌러 크롬브라우저로 열음
