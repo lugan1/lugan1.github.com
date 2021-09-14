@@ -6,7 +6,7 @@ categories:
 - javascript
 date: '2021-09-14 15:00:57 +0900'
 classes: wide
-last_modified_at: '2021-09-14 17:59:01 +0900'
+last_modified_at: '2021-09-14 22:46:01 +0900'
 ---
 
 ## 브라우저 객체 모델 (BOM)
@@ -99,6 +99,21 @@ val auto_2 setInterval( fucntion() {
     <button onclick="clearInterval(auto_2)">감소 정지</button>
 </body>
 ```
+<br>
+<br>
+
+## document 객체
+- body, div, img, a, form, input 등의 속성 정보를 가져오고, 변경 가능
+```javascript
+var imgTag document.getElementsById("photo");
+//photo 태그의 참조 주소를 갖고옴. 리턴 타입이 photo 자료형이라고 보면됨
+
+imgTag.setAttribute("src", "src주소 입력");
+//photo 속성에서 src 값 설정 및 변경
+
+```
+
+<br>
 
 ## Screen 객체
 - 사용자의 모니터 정보(속성) 등을 제공하는 객체
