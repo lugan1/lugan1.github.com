@@ -4,7 +4,7 @@ tags:
 - javascript
 categories:
 - javascript
-date: '2021-09-13 12:17:57 +0900'
+date: '2021-09-13 12:17:57'
 classes: wide
 ---
 

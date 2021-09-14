@@ -4,7 +4,7 @@ tags:
 - java
 categories:
 - java
-date: '2021-09-12 23:03:57 +0900'
+date: '2021-09-12 23:03:57'
 classes: wide
 last_modified_at: '2021-09-13 03:10:01 +0900'
 ---

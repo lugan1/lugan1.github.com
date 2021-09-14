@@ -4,7 +4,7 @@ tags:
 - javascript
 categories:
 - javascript
-date: '2021-09-14 04:26:57 +0900'
+date: '2021-09-14 04:26:57'
 classes: wide
 last_modified_at: '2021-09-14 06:38:01 +0900'
 ---
