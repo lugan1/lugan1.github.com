@@ -1,11 +1,12 @@
 ---
-title: "[javascript] 객체, 배열"
+title: "[javascript] 객체, 배열, 문자열"
 tags:
 - javascript
 categories:
 - javascript
 date: '2021-09-14 04:28:57 +0900'
 classes: wide
+last_modified_at: '2021-09-14 14:57:01 +0900'
 ---
 
 ## 브라우저 객체모델 (BOM) 메소드들 맛보기
@@ -79,8 +80,9 @@ tv.info();
 car.info();
 ```
 
+<br>
 
-## 배열
+## 배열 객체
 - 한 배열에 숫자형, 문자형, boolean 형 값들을 같이 넣을수 있음
 <br>var 참조변수 = new Array();
 <br>var 참조변수 = new Array(값1, 값2, 값3);
@@ -89,9 +91,58 @@ car.info();
 - ex) var testArray = new Array(30, "따르릉", true);
 
 <br>배열 중요 메서드
+
+- splice() -> 지정 데이터를 삭제하고, 그 구간에 새 데이터 삽입
 - pop() -> 배열 마지막 인덱스의 데이터를 가져옴 (빼옴)
 - shift() -> 배열 첫번째 인덱스의 데이터를 가져옴 (빼옴)
 - push() -> 배열 마지막에 데이터를 밀어넣음
 - unshift() -> 배열 첫번째에 데이터를 밀어넣음
 
+```javascript
+var greenArr = ["교대", "방배", "강남"];
+//교대(0), 방배(1), 강남(2)
+
+var yellowArrr = ["미금", "정자", "수서"];
+//미금(0), 정자(1), 수서(2)
+
+greenArr.splice(2, 1, "서초", "역삼");
+// 2번째 인덱스부터 1개의 데이터 삭제후, 서초 역삼 삽입
+
+console.log(greenArr);
+// ["교대", "방배", "서초", "역삼"]
+
+var 수서 = yellowArr.pop();
+var 미금 = yellowArr.shift();
+
+yellowArr.push(미금);
+console.log(yellowArr);
+// ["정자", "미금"]
+
+yellowArr.unshift(수서);
+console.log(yellowArr);
+// ["수서", "정자", "미금"]
+```
+
+<br>
+<br>
+
+## 문자열 객체
+```javascript
+var 참조변수 = new String(문자형 데이터);
+//혹은
+var 참조변수 = 문자형데이터
+//으로 문자열 객체 선언
+```
+
+- indexOf() 메소드 : 해당하는 문자의 index 반환, 파이썬의 in 과 같은형식으로 문자열에 해당문자가 포함되는지 확인할수 있음
+
+```javascript
+var testString = "you lucky guy";
+var check1 = false;
+
+if (testString.indexOf("lucky") > 0 ){
+    console.log("true");
+}
+// indexOf(문자열) > 0 형식으로 문자가 포함되어있는지 확인할수 있음
+```
 
