@@ -1,5 +1,5 @@
 ---
-title: "[javascript] 변수선언, 호이스팅, typeof, 삼항 조건 연산자"
+title: "[javascript] 변수, 데이터타입, 호이스팅, typeof, 조건 연산자"
 tags:
 - javascript
 categories:
@@ -9,17 +9,47 @@ classes: wide
 last_modified_at: '2021-09-14 06:38:01 +0900'
 ---
 ## 데이터타입 종류
+
+### 기본타입
 - number(숫자)
+  - 자바스크립트는 하나의 숫자형만 존재함
+  - 모든 숫자를 64비트 부동소수점 형태로 저장하기 때문이다.
+  - 5 / 2 같은 연산은 정수로 처리하는 것이 아닌 **실수로 처리되어서 실수값 2.5가 나온다.**
 - String(문자)
+  - 자바스크립트에서는 한번 생성된 문자열은 읽기만 가능하고 수정은 불가능하다.
+  - a = "asdf" ; a = "qwer"; 값이 변경된거 같지만 a를 새로 만든거임
+
 - boolean(참,거짓) : false-> 0, '', NaN, undifined
-- null : 값이 텅텅 빈 변수
-- undifined : 값이 텅텅 비었는지, 값을 넣을건지 아직 정해지지 않은 변수 
+- null : 값이 텅텅 빈 변수. 
+  - 개발자가 명시적으로 값이 비어있음을 나타내는데 사용.
+  - null 타입 변수를 typeof 연산자로 검사하면 object로 뜸
+  - 따라서 a === null 과 같이 typeof 쓰지말고 그냥 ===연산자로 null 검사해야됨.
+
+- undifined : 값이 텅텅 비었는지, 값을 넣을건지 아직 정해지지 않은 변수
   - let a; 같이 값이 할당되지 않는거
+
+### 참조타입  
 - object
-- fucntion  
-- symbol : 고유한 식별자를 만들때 사용
+  - Array
+  - Fucntion
+  - Regexp (정규표현식)
+  - symbol : 고유한 식별자를 만들때 사용
 
 ```javascript
+//자바스크립트의 문자열은 불변임, 값 변경 불가
+var str = 'test';
+
+str[0] = 'W';
+console.log(str) // 출력값 test
+
+var a = "asdf";
+a = "qwer";
+//값이 변경된거 같지만 a를 새로 만든거임
+//str[1] = "ㄹ" 이런식으로 인덱스 연산자를 이용한 값변경은 안됨
+
+
+
+
 const symbol1 = Symbol('id1');
 const symbol2 = Symbol('id1');
 consol.log(symbol1 === symbol2); // false
@@ -115,7 +145,7 @@ const fstring = "${naver} 의 주소는 naver.com 이다."
 
 <br>
 
-## First-class function
+## First-class function (함수 표현식)
 - 변수에 함수를 할당가능
 - 함수의 매개변수로 함수를 넣는것도 가능
 - 함수의 리턴타입을 함수로 하는것도 가능.
