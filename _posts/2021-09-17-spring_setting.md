@@ -11,7 +11,7 @@ classes: wide
 ## 스프링 환경세팅, 설치 준비물
 
 1. JDK 설치 및, JAVA_HOME 환경변수 설정
-<br> [오라클 홈페이지](http://www.orcale.com)
+<br> [오라클 홈페이지](http://www.oracle.com)
 <br>  환경변수 설정
    - step 1. C:\Program Files\Java\jdk 설치된곳/bin 으로 가서 경로 복사
    - step 2. 시스템 고급설정-> 환경변수에서 제일 위칸 새로 만들기에서 이름 : JAVA_HOME, 변수값 : 아까 경로 복붙
