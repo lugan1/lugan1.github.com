@@ -1,7 +1,8 @@
 ---
 title: "[spring] 스프링 환경세팅, 설치할것"
 tags:
-- spring, java
+- spring
+- java
 categories:
 - srping
 date: '2021-09-17 01:31:57'
