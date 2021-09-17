@@ -46,6 +46,7 @@ classes: wide
    - step 1. 그레이들 압축파일 다운받기
    - step 2. c:/devtool/ 등 적당한곳에 압축파일 풀기 (설치 끝)
    - setp 3. 고급 시스템설정 -> 환경변수 -> path 편집 -> 새로만들기 -> 압축 푼 그레이들 bin 폴더경로 복붙
+   - step 4. CMD 창에 gradle -version 치고 정상적으로 뜨는지 확인
 
 <br>
 <br>
