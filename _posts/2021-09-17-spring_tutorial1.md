@@ -176,8 +176,6 @@ step 1. pom.xml 파일 열어서, \<version> 속성 밑에 다음과 같은 항�
 
 ## spring-context 의존관계
 
-<br>
-
 ### spring-context
  - spring-core
     - spring-jcl
@@ -189,8 +187,11 @@ step 1. pom.xml 파일 열어서, \<version> 속성 밑에 다음과 같은 항�
  - aspectjweaver (optional)
 
 <br>
+<br>
+
 
  ## 메이븐 임포트가 안되어 있을시 메이븐 임포트 하는방법
+
  - Maven Dependencies 에 파일이 하나도 없으면 임포트가 안되어 있는것이다.
 
  - 왼쪽 패키지 탐색기에서 프로젝트 폴더 선택후 [File] -> [import] -> [Exiting Maven Projects]
