@@ -103,14 +103,6 @@ grup-id -> maven
 
 
 <br>
-<br>
-
-## 메이븐 로컬 리포지토리 경로
-- [사용자 홈 폴더] \ .m2 \ repository
-- ex) C:\Users\사용자\.m2\repository
-
-
-<br>
 
 step 1. pom.xml 파일 열어서, \<version> 속성 밑에 다음과 같은 항목 추가
 <br> \<denpendencies> \</dependencies> , \<build> \</build>
@@ -132,6 +124,15 @@ step 1. pom.xml 파일 열어서, \<version> 속성 밑에 다음과 같은 항�
 - groupID : org.springframework 에 있는
 - artifacID : spring-context 모듈을 사용
 - version : 사용하려는 모듈의 버전
+
+<br>
+<br>
+<br>
+
+## 메이븐 로컬 리포지토리 경로
+- [사용자 홈 폴더] \ .m2 \ repository
+- ex) C:\Users\사용자\.m2\repository
+
 
 <br>
 <br>
