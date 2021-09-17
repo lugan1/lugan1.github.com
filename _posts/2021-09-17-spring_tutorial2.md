@@ -5,8 +5,9 @@ tags:
 - java
 categories:
 - srping
-date: '2021-09-17 :31:57'
+date: '2021-09-17 19:31:57'
 classes: wide
+last_modified_at: '2021-09-18 02:38:01 +0900'
 ---
 
 저번 포스트에 메이븐 프로젝트를 생성하는 방법을 적었고, 이번에는 그래들 프로젝트를 생성하는 방법을 포스트 했다.
@@ -37,21 +38,37 @@ classes: wide
 ### step 3.
 [file] -> [new] -> [other] -> [gradle prject] -> next -> 프로젝트 이름 입력후 next -> next -> finish
 
+<br>
+
 **could not execute build using connection to gradle installation** 오류 나올시에 해결방법
  - Gradle 공식 홈페이지에서 최신 버전을 다운받고 환경 변수 설정을 해준다.
  - 이클립스 Gradle 설정에서 로컬 디렉터리 경로를 아까 다운받은 최신 Gradle 경로로 잡아준다.
 
+<br>
+<br>
 
  자바 소스파일에서 **Implicit super constructor Object() is undefined for default constructor. Must define an explicit constructor** 오류 나올시 해결법
  - 왼쪽 익스플로러 창에서 프로젝트 마우스 오른쪽 버튼 클릭
  - build path -> configure buildpath -> Java build path -> Libraries 항목에서 add Library -> Jre system Library 선택후 저장
 
+<br>
+<br>
+
 Gradle 프로젝트 파일 생성시, Lib 폴더와 프로젝트 폴더가 따로 보이는 현상 -> gradle 7.2 버전 문제인듯
  - gradle 7.2 이하로 내리면 프로젝트 자체가 생성이 안되서 현재로는 해결 불가
 
 
+<br>
+
+Gradle 프로젝트 생성시 Lib 폴더에 빨간줄 쳐져있는 현상 해결법
+ - Lib 폴더에 마우스 오른쪽 클릭 -> build path -> add Libraries -> JRE 추가하고 저장
 
 
+
+
+<br>
+<br>
+<br>
 
 ### step 4. (만약 기존 프로젝트에 gradle import 할생각이면 여기서부터 시작. build.gradle 파일 부터 만듬)
 스프링 의존(Dependencies) 설정하기
@@ -70,6 +87,8 @@ Gradle 프로젝트 파일 생성시, Lib 폴더와 프로젝트 폴더가 따�
 
   - Project and external Dependencies 에 spring 관련 jar 파일들 다운로드 되어져 있는지 확인
 
+<br>
+<br>
 
  ### step 5. 
  CMD 창으로 프로젝트 폴더 이동해서 gradle wrapper 입력 실행
@@ -86,6 +105,8 @@ Gradle 프로젝트 파일 생성시, Lib 폴더와 프로젝트 폴더가 따�
 - 각 생성된 두개의 파일과 gradle 폴더를 공유하면 그래이들을 설치하지 않은 개발자도 생성한 래퍼 파일을 이용해서 그래이들 명령어를 실행할수 있음
 
 
+<br>
+<br>
 
  ### step 6.
  CMD 창으로 프로젝트 폴더 위치에서 gradlew compileJava 명령어 실행
