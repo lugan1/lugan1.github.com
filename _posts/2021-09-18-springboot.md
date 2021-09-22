@@ -73,11 +73,11 @@ classes: wide
 <br>
 <br>
 
-### step 4. 프로젝트 Run 구동 해보고, localhost:8080 으로 페이지 이동되면 성공
+### step 4. 프로젝트 Run 구동 해보고, localhost\:8080 으로 페이지 이동되면 성공
 
 ### step 5. resource -> static 폴더에 hello.html 파일 생성
 
 ### step 6. \<body> 태그 안에 \<h1>hello world!\<h1> 입력
 
-### step 7. 서버 재구동하고 localhost:8080/hello.html 이동후 제대로 출력 되는지 확인
+### step 7. 서버 재구동하고 localhost\:8080/hello.html 이동후 제대로 출력 되는지 확인
 
