@@ -104,10 +104,10 @@ Gradle 프로젝트 생성시 Lib 폴더에 빨간줄 쳐져있는 현상 해결
 
   - Project and external Dependencies 에 spring 관련 jar 파일들 다운로드 되어져 있는지 확인
 
-<br>
-<br>
+<br/>
+<br/>
 
- ### step 5. 
+### step 5. 
  CMD 창으로 프로젝트 폴더 이동해서 gradle wrapper 입력 실행
 - 명령어 실행에 성공하면 프로젝트 루트 폴더에 다음과 같은 파일과 폴더가 생성된다.
 
@@ -122,13 +122,14 @@ Gradle 프로젝트 생성시 Lib 폴더에 빨간줄 쳐져있는 현상 해결
 - 각 생성된 두개의 파일과 gradle 폴더를 공유하면 그래이들을 설치하지 않은 개발자도 생성한 래퍼 파일을 이용해서 그래이들 명령어를 실행할수 있음
 
 
-<br>
-<br>
+<br/>
+<br/>
 
- ### step 6.
+
+### step 6.
  CMD 창으로 프로젝트 폴더 위치에서 gradlew compileJava 명령어 실행
 
- ### step 7.
+### step 7.
  기존 프로젝트 폴더에서 [file] -> [import] 로 그래들 프로젝트 임포트
 
 
