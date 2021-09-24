@@ -54,6 +54,7 @@ last_modified_at: '2021-09-24 03:40:01 +0900'
   
 setting.gradle 파일에서 include('lib') 항목 삭제후 lib 폴더의 내용물을 전부 본래 프로젝트 폴더로 이동 -> lib 폴더 삭제
 
+**현재 위 방법으로 문제 해결시에 project and external dependencies 사라지는 문제 발생** -> 그냥 lib 폴더에서 build-path 에서 junit , jre 라이브러리만 추가해서 해야됨
 
 
 <br/>
@@ -89,12 +90,23 @@ Gradle 프로젝트 생성시 Lib 폴더에 빨간줄 쳐져있는 현상 해결
 
 ### step 4. (만약 기존 프로젝트에 gradle import 할생각이면 여기서부터 시작. build.gradle 파일 부터 만듬)
 스프링 의존(Dependencies) 설정하기
- - build.gradle 파일 열어서 dependencies 의존에 'org.springframework:spring-context:5.0.2.RELEASE' 추가하기
+ - ~~build.gradle 파일 열어서 dependencies 의존에 'org.springframework:spring-context:5.0.2.RELEASE' 추가하기~~
+
+ - 위 방법으로 하면 컴파일 시에 스프링 클래스 로드를 못한다고 예외 오류 뜬다. 다음과 같은 방법으로 해야된다.
+
+   - [https://mvnrepository.com/artifact/org.springframework/spring-context](https://mvnrepository.com/artifact/org.springframework/spring-context) 공식 홈피에 들어간다.
+
+   - spring-context 최신 버전 항목에 들어간다.
+
+   - gradle-short 항목에 들어가서 implementation ~~ 하는 문장을 build.gradle에 복사 붙여넣기 한다.
+
+   - 이클립스에서 gradle 리플래쉬 하면 최신 버전이 다운받아진다. 
 
 
  - 책에서는 앞에 compile 명령어가 붙지만 gradle 7버전 이상에서는 compile 명령어 사용하면 **Could not find method compile() for arguments** 오류 발생
 
- - compile 명령어 대신 implementation 명령어를 사용해야함
+ - compile 명령어 대신 implementation 명령어를 사용해야함  
+ 예시)
 
  ```
  implementation 'org.springframework:spring-context:5.0.2.RELEASE'

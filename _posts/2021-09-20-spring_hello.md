@@ -94,7 +94,23 @@ public class Main {
 		//파라미터1 : @Bean 애노테이션 메서드 이름인 Bean 객체의 이름
 		//파라미터2 : 가져올 Bean 객체의 타입 (클래스)
 		
+
+		String msg = greeter.greet("스프링");
+		System.out.println(msg);
+		applicationcontext.close();
 	}
 
 }
 ```
+
+<br/>
+<br/>
+
+**java.lang.IllegalStateException: Cannot load configuration class:** 에러 해결방법
+
+
+스프링 의존 버전 문제인것 같다. 최신버전으로 받으니 해결 되었다.  
+
+기존에 build.gradle 에 있던 spring 항목은 지우고
+
+[https://mvnrepository.com/artifact/org.springframework/spring-context](https://mvnrepository.com/artifact/org.springframework/spring-context) 여기서 최신 버전으로 들어간다음에 Gradle(short) 항목에 있는 문장을 build.gradle 에 추가한다.
