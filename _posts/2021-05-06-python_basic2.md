@@ -7,7 +7,7 @@ categories:
 - 코딩테스트
 date: '2021-05-06 13:29:57 +0900'
 classes: wide
-last_modified_at: '2021-09-10 02:08:01 +0900'
+last_modified_at: '2021-09-26 10:26:01 +0900'
 ---
 
 얼마전 인터넷으로 '이것이 취업을 위한 코딩테스트다' 서적을 구매해서 공부한거 정리
@@ -374,13 +374,14 @@ n, m, k = map(int input().split())
 
 print(n, m, k) #3, 5, 7
 ```
-<br>
+<br/>
+
 
 - 입력의 갯수가 많을 경우에는 sys.stdin.readline() 함수 사용
 
 - 입력후 엔터키가 줄바꿈 기호로 입력되기 때문에 rstrip() 함수를 이용해서 공백 문자를 제거해야됨
-<br>
-<br>
+<br/>
+<br/>
 
 ```python
 import sys
@@ -390,8 +391,36 @@ data = sys.stdin.readline().rstrip()
 print(data)
 ```
 
-<br>
-<br>
+<br/>
+<br/>
+
+
+## map() 함수
+- 첫번째 매개변수-> 함수
+- 두번째 매개변수-> 이터레이블 객체
+- 이터레이블 모든 요소를 함수의 매개변수로 차례대로 넣어서 그 결과값을 리스트로 반환
+- 맵 객체는 변수 여러개에 저장을 동시에 할 수 있음
+
+```python
+>>> a = [1.2, 2.5, 3.7, 4.6]
+>>> a = list(map(int, a))
+>>> a
+[1, 2, 3, 4]
+
+
+
+a, b = map(int, input().split())
+## ---> 풀어서 쓰면 다음과 같이 됨
+
+x = input().split()    # input().split()의 결과는 문자열 리스트
+m = map(int, x)        # 리스트의 요소를 int로 변환, 결과는 맵 객체
+a, b = m               # 맵 객체는 변수 여러 개에 저장할 수 있음
+
+```
+
+
+<br/>
+<br/>
 
 ## 5.2 출력 print()
 - int형 변수 + 문자열 하면 에러 발생
