@@ -1,0 +1,383 @@
+[33mcommit 1c30d4b1ec90a790aee0137460889e910603d4b1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: hgLee <hglee@softnet.co.kr>
+Date:   Fri Oct 1 18:15:02 2021 +0900
+
+    post 추가
+
+[33mcommit e1157879264a06527110e6284765a3e964d3d7ec[m
+Author: DESKTOP-GM43ODH\hgLee <hglee@softnet.co.kr>
+Date:   Fri Oct 1 10:01:46 2021 +0900
+
+    post 추가
+
+[33mcommit 43ce47d0400bce239a2139e79b8b9c08409892a3[m
+Author: DESKTOP-GM43ODH\hgLee <hglee@softnet.co.kr>
+Date:   Thu Sep 30 18:05:17 2021 +0900
+
+    post추가
+
+[33mcommit 8a853f98db0ec3bb7973102799cf85d5a8a264ef[m
+Author: DESKTOP-GM43ODH\hgLee <hglee@softnet.co.kr>
+Date:   Wed Sep 29 18:33:11 2021 +0900
+
+    post 추가
+
+[33mcommit bdd7e5440001e415c1fefe6184d735d0bafdd6f4[m
+Author: DESKTOP-GM43ODH\hgLee <hglee@softnet.co.kr>
+Date:   Wed Sep 29 13:14:42 2021 +0900
+
+    post 추가
+
+[33mcommit 6fb2aa0af7ae6dbd47bd0620da5689c619877d4b[m
+Author: DESKTOP-GM43ODH\hgLee <hglee@softnet.co.kr>
+Date:   Tue Sep 28 18:13:30 2021 +0900
+
+    post 추가
+
+[33mcommit d7f386a2ee85d9300b6360fc02e586677aa426f8[m
+Author: DESKTOP-GM43ODH\hgLee <hglee@softnet.co.kr>
+Date:   Tue Sep 28 14:07:29 2021 +0900
+
+    post 추가
+
+[33mcommit 0517abad3917de4133d521acf6ba8771a6b857bd[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Sun Sep 26 22:48:00 2021 +0900
+
+    post 수정
+
+[33mcommit 69a9df46d8f6d902aea1af12fdf3c5fb2e05bbf2[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 24 09:00:51 2021 +0900
+
+    post 수정
+
+[33mcommit 2f07f4bbc130e8381522caf9de992b82d89cbfa1[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 24 03:49:44 2021 +0900
+
+    post 수정
+
+[33mcommit 3e1ac33481fa4bc288fbe7e04b5cf2fdb862baf0[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 24 03:45:03 2021 +0900
+
+    post 수정
+
+[33mcommit 43dc29f8d58ac6c3dc4480ea9f0fc0b4f04a1b23[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 22 09:59:23 2021 +0900
+
+    config yml 수정
+
+[33mcommit a0669d8968e72297143a6c427e146c3b5fc17b01[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 22 09:38:04 2021 +0900
+
+    post 수정
+
+[33mcommit 5175791171affa43fc40298af9f81af6d2886b85[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 22 09:22:17 2021 +0900
+
+    post 수정
+
+[33mcommit 6f1fc4adfb52fe92a24adef0aa92b1b61be8dbbe[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 22 09:08:27 2021 +0900
+
+    post 수정
+
+[33mcommit 2fd4135f468c87cce5cd32c6096e78ea077b55e7[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 22 09:01:41 2021 +0900
+
+    post 추가
+
+[33mcommit 7cfafea8a9831405705cd83c8dda3b4ea0445ab0[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Sat Sep 18 05:54:51 2021 +0900
+
+    post 수정
+
+[33mcommit 32dfd7f43a326522bef2c9ebc07fef1838184b39[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Sat Sep 18 03:19:43 2021 +0900
+
+    gradle 프로젝트 생성 포스트 추가
+
+[33mcommit 6f22c1b8ded7dcd1da46f56c3bd1b7fb07a04f36[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 19:45:59 2021 +0900
+
+    그래들 메이븐 비교 포스트 추가
+
+[33mcommit ce4b4d09ff29a1d004e15706edd84ec7029d7206[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 12:42:34 2021 +0900
+
+    포스트 수정
+
+[33mcommit 1e9f5b6ea25dfa70fac9f6158a52e7712eba34b8[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 12:39:07 2021 +0900
+
+    포스트 수정
+
+[33mcommit ebb4007ce9b77dd3ef5ed972be092e9ec7155efb[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 12:26:27 2021 +0900
+
+    포스트 수정
+
+[33mcommit c3cbfe1c10eda3d7e9cad3a22e41b1b034ef78f5[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 12:23:00 2021 +0900
+
+    스프링 메이븐 프로젝트 생성 포스트 추가
+
+[33mcommit 0148a365611ca11339fe8184527e58eba1c18bf7[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 03:31:19 2021 +0900
+
+    스프링 포스트 수정
+
+[33mcommit a3fca57f7a02ec6ed105bc9aa7072162bb63d66f[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 03:16:45 2021 +0900
+
+    포스트 수정
+
+[33mcommit 16070a08020e7887dc53b0165157e24530f07739[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 17 03:12:19 2021 +0900
+
+    포스트 스프링 추가
+
+[33mcommit f1d3c7723397ec3e6ffdc76a6f0c40209bde6d38[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Thu Sep 16 02:27:39 2021 +0900
+
+    javascript 포스트 추가 및 수정
+
+[33mcommit 2166b0b9c7aba4ac5d99f8539e6c76967e6a1b94[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 15 04:58:33 2021 +0900
+
+    함수표현식 함수선언식 포스트 수정
+
+[33mcommit 9031d24ea1349961d6e4e02536b5cef79627e715[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 15 04:34:22 2021 +0900
+
+    포스트 날짜수정
+
+[33mcommit 750522650a89bc283ad18183c365dafafebef31d[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Wed Sep 15 02:09:24 2021 +0900
+
+    자바스크립트 함수 포스트 추가
+
+[33mcommit e5302f444557a8489b1015d78a9d7588f2b9e6f3[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Tue Sep 14 18:00:40 2021 +0900
+
+    브라우저 객체모델 포스트 추가
+
+[33mcommit 5603fb1f5626e6c2cc531953ee6e9d90fb8d2df1[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Tue Sep 14 06:56:02 2021 +0900
+
+    javascript 포스트 수정 및 추가
+
+[33mcommit 7968cb34998f40d57ac9f8f04b889dcd8ac4d4cb[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Tue Sep 14 04:41:32 2021 +0900
+
+    javascript 포스트 추가
+
+[33mcommit 7374a36de14fdb80748f898656b60fddce3a250f[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Mon Sep 13 12:28:39 2021 +0900
+
+    javascript 포스트 추가
+
+[33mcommit d8499d49cf28842c86e5cbd966054863d2632b2b[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Mon Sep 13 03:22:57 2021 +0900
+
+    자바 복습(3) 포스트 수정. 테이블표
+
+[33mcommit 8517ec067c4028931a719d8484302fb10ee67bb1[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Mon Sep 13 03:10:45 2021 +0900
+
+    자바 복습(3) 포스트 작성완료
+
+[33mcommit 1792fd97bcbb53b24c3f6b62d188f1aa9631ec88[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Sun Sep 12 19:48:45 2021 +0900
+
+    java 복습(2) 포스트 추가
+
+[33mcommit bf2208eaee0ff146ff6f567563871a4618c10a97[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Sat Sep 11 20:45:59 2021 +0900
+
+    자바 복습 post(1) 작성완료
+
+[33mcommit cac1e125c2793f690cd7e644ccc819859a763e2c[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 12:23:52 2021 +0900
+
+    cmd 배치파일 만들기 포스트 수정
+
+[33mcommit 5abdfe81092f65751c4e2ffadc804f2b0df67f05[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 12:17:03 2021 +0900
+
+    프로필, 메뉴 reluton->about 수정
+
+[33mcommit ca38b2d191f0d04804f103d4c9466557964b05fa[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 12:13:59 2021 +0900
+
+    프로필, 메뉴 about 페이지 수정
+
+[33mcommit 0aa7a1021f150545a3096d0124623c8091192eab[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 11:49:36 2021 +0900
+
+    프로필, 메뉴 about->resoluton 수정
+
+[33mcommit 8f494f825729d7c3a2c132beca7bcd4ce97dc12d[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 02:38:10 2021 +0900
+
+    python basic 문법 (2) 포스트 수정
+
+[33mcommit aef4775db13180e39f6cc4b4e86fa6338d4503fe[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 02:31:50 2021 +0900
+
+    깃 push 이슈 포스트 수정
+
+[33mcommit ff1de98db044efa8e97b4ee22078e536459a1905[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 02:27:11 2021 +0900
+
+    git push 시에 remote : support ~~ 문제 해결
+
+[33mcommit 415f519587465ccad41d7d5954c982b2f0b5acc1[m
+Author: LeeHoogy <lugan2@naver.com>
+Date:   Fri Sep 10 01:59:10 2021 +0900
+
+    python 기본문법 공부(2) 포스트 추가
+
+[33mcommit bbc24383f99fdb04056ee03ca9211895a86d03ee[m
+Author: lugan <lugan2@naver.com>
+Date:   Wed Apr 28 15:56:42 2021 +0900
+
+    헤더 이미지 크기 수정
+
+[33mcommit 482e1c1d100202a455395ddbb4d55e2a4ea56deb[m
+Author: lugan <lugan2@naver.com>
+Date:   Wed Apr 28 14:22:55 2021 +0900
+
+    상단 헤더 이미지 수정
+
+[33mcommit 4c856d2640ef242c2a24dc80c3034a0e6984e630[m
+Author: lugan <lugan2@naver.com>
+Date:   Wed Apr 28 10:29:56 2021 +0900
+
+    posts.html 수정, 년도의 월별로 그룹핑되도록 수정
+
+[33mcommit 7f8a95c733da7edc230faa5d79f2276c20aed7ef[m
+Author: lugan <lugan2@naver.com>
+Date:   Tue Apr 27 08:59:44 2021 +0900
+
+    포스트 수정, title 이미지 가운데정렬
+
+[33mcommit 2e83133f9b36ae625a3e15c41af7184e0b24c015[m
+Author: lugan <lugan2@naver.com>
+Date:   Mon Apr 26 11:43:40 2021 +0900
+
+    날짜포맷수정, 상단 타이틀이미지 추가, 스킨변경
+
+[33mcommit b31bb1781e3a1fbbb03aa096f66eaa16d722cd2f[m
+Author: lugan <lugan2@naver.com>
+Date:   Mon Apr 26 04:52:40 2021 +0900
+
+    프로필 공간 카테고리 추가, 스킨변경. wide로 변환
+
+[33mcommit 26039f07c0933ce2fe2358a5f30727897681ceba[m
+Author: lugan <lugan2@naver.com>
+Date:   Sun Apr 25 01:38:42 2021 +0900
+
+    post추가
+
+[33mcommit a127c4ed0c560175c454b7bb3a0c80ccb48e83bb[m
+Author: lugan <lugan2@naver.com>
+Date:   Thu Apr 22 06:50:00 2021 +0900
+
+    post수정 블로그이사 3
+
+[33mcommit 972e2334d0c7bb04d9839d3f48e4837571c508c2[m
+Author: lugan <lugan2@naver.com>
+Date:   Thu Apr 22 06:15:14 2021 +0900
+
+    google 블로그 이전 포스트 (3) 작성
+
+[33mcommit bb0e8ea8e04a0e5686e2262df8c98b17c8e0f89f[m
+Author: lugan <lugan2@naver.com>
+Date:   Wed Apr 21 09:45:33 2021 +0900
+
+    post 추가
+
+[33mcommit 2883788d891b8da19619540625aba08fd57598c1[m
+Author: lugan <lugan2@naver.com>
+Date:   Tue Apr 20 10:05:35 2021 +0900
+
+    post 구글 블로그 이사 업데이트
+
+[33mcommit 9ea477228e33444775dbc8b3faaf6d55f6fe437b[m
+Author: lugan <lugan2@naver.com>
+Date:   Mon Apr 19 17:14:16 2021 +0900
+
+    링크 색깔 변경, 폰트변경, 폰트사이즈 변경
+
+[33mcommit 7dcf7e39f15f5801fdfb3a9d8fc06218acc9f0de[m
+Author: lugan <lugan2@naver.com>
+Date:   Mon Apr 19 01:45:51 2021 +0900
+
+    google such 등록
+
+[33mcommit 4178b154fc10b0535e028daadfc246f19038c4b6[m
+Author: lugan <lugan2@naver.com>
+Date:   Mon Apr 19 01:11:35 2021 +0900
+
+    config.yml short name 바꿈
+
+[33mcommit 5e5653e74724b1be68be8cc6f6cfbddc3bc1ffb0[m
+Author: lugan <lugan2@naver.com>
+Date:   Mon Apr 19 01:04:01 2021 +0900
+
+    add comment, add Menu_category, add post
+
+[33mcommit 1cbb1e1dbd00f7daf1cd6e3fffdb0313cc2e8200[m
+Author: lugan <lugan2@naver.com>
+Date:   Sun Apr 18 07:38:27 2021 +0900
+
+    첫번째 포스트글 작성, 상단 메뉴 md 생성
+
+[33mcommit 6d1e1a9509df9378766c1eef15721f9ef55d7098[m
+Author: lugan <lugan2@naver.com>
+Date:   Sat Apr 17 21:52:54 2021 +0900
+
+    Theme changed
+
+[33mcommit c69450c222d73f88367c7b85dd4e486b0b7167ef[m
+Author: lugan1 <39528583+lugan1@users.noreply.github.com>
+Date:   Sat Apr 17 20:08:26 2021 +0900
+
+    Initial commit
