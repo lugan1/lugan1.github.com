@@ -4,7 +4,7 @@ tags:
 - spring
 - java
 categories:
-- srping
+- spring
 date: '2021-09-20 06:00:57'
 classes: wide
 ---

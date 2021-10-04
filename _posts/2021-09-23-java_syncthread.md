@@ -1,5 +1,5 @@
 ---
-title: "[java] 멀티쓰레드 동기화, wati(), notify()"
+title: "[java] 멀티쓰레드 동기화, wait(), notify()"
 tags:
 - java
 categories:

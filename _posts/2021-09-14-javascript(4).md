@@ -131,7 +131,7 @@ const bigInt = 123456789n; // 최근에 추가된 데이터타입. 숫자 끝에
 
 let testString = "naver";
 
-const fstring = "${naver} 의 주소는 naver.com 이다."
+const fstring = "${testString} 의 주소는 naver.com 이다."
 // template literals
 // 파이썬의 fstring 과 비슷한기능. ${변수} 하면 변수의 문자열값이 대입되어 출력됨
 
