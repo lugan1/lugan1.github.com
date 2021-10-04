@@ -280,6 +280,7 @@ HTML파일
   <h2 class="ui header">Demo Form: Sku with Builder</h2>
 
   <!-- [formGroup]="myForm" -> myForm 을 이폼의 FormGroup 으로 사용한다-->
+  <!-- (ngSubmit)  -> TS파일의 onSubmit이벤트 바인딩,  -->
   <form [formGroup]="myForm"
         (ngSubmit)="onSubmit(myForm.value)"
         class="ui form">
