@@ -10,6 +10,7 @@ classes: wide
 ---
 # 출저 및 참고 사이트  
 [https://medium.com/extales/git%EC%9D%84-%EB%8B%A4%EB%A3%A8%EB%8A%94-workflow-gitflow-github-flow-gitlab-flow-849d4e4104d9](https://medium.com/extales/git%EC%9D%84-%EB%8B%A4%EB%A3%A8%EB%8A%94-workflow-gitflow-github-flow-gitlab-flow-849d4e4104d9)  
+[https://nomad-programmer.tistory.com/39](https://nomad-programmer.tistory.com/39)  
 
 <br/>
 <br/>
@@ -114,3 +115,24 @@ classes: wide
 - Gitlab flow의 Production 브렌치는 Gitflow의 Master브랜치역할과 같다.
 - Gitlab flow의 Master브랜치는 Production 브랜치로 병합한다.
 - 이렇게 브랜치전략을 가져갈 때의 이점은 Production브랜치에서 릴리즈된 코드가 항상 프로젝트의 최신버전 상태를 유지해야할 필요가 없다는 것이다.
+
+<br/>
+<br/>
+
+## Gitlab Flow 추가 설명
+출저 및 참고 사이트 :  
+[https://nomad-programmer.tistory.com/39](https://nomad-programmer.tistory.com/39)  
+
+- feature 브랜치의 작업 결과가 master 브랜치로 병합된다
+- 배포 준비가 되면 master 브랜치에서 production 브랜치로 병합한다.
+- Production 브랜치는 오직 배포만을 담당한다.
+- 즉, Production 브랜치 = Release(배포) 브랜치 이다.
+
+<br/>
+<br/>
+
+## Pre-production 브랜치 추가
+- Pre-Production 브랜치는 테스트 브랜치 이다.
+- 개발 환경에서 바로 배포하지 않고, 사용 환경과 동일한 테스트 환경에서 코드를 테스트 하는 것이다.
+- 즉, pre-production 브랜치에서 런칭 환경 테스트를 먼저하고, 이상이 없으면 production 브랜치에 배포하는 형태이다.
+- 웹개발에서 예를 들자면, 로컬 저장소에서 기능 개발을 한 다음, 테스트 서버(pre-production)에서 시험하고, 실제 서비스로 배포하는 것을 production 브랜치에 병합 하는 것으로 생각하면 된다.
