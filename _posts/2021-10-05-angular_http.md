@@ -80,5 +80,31 @@ interface board{
       .pipe(map(data => {}))
       .subscribe(result => { console.log(result); });
   }
+
+```
+
+
+## Observable 객체
+
+참조 및 출저 사이트 :  
+[https://pcconsoleoraksil.tistory.com/301?category=1080683](https://pcconsoleoraksil.tistory.com/301?category=1080683)  
+
+- Observable :미래에 얻게 될 value/event를 가질 컬렉션.
+- Observable 객체가 리턴한 값은 subscribe 를 통하여 타입별로 그 값을 읽어올 수 있다. 
+- 대게 보낸 요청에 대한 응답으로 Observable 객체가 날아온다.
+- 하나의 Observable 객체는 여러번 값을 리턴할 수 있다.
+
+<br/>
+<br/>
+
+## Json 객체 얻어와서 board 자료구조에 집어넣고, console에 출력하기
+
+```javascript
+  getBoardList() : void{
+    // RxJS 에서의 pipe() 함수 : 연산자를 함께 연결할 수 있다. 파이프를 사용하면 여러 기능을 단일 기능으로 결합할 수 있다.
+    // 결합하려는 함수를 인수로 사용하고 실행될 때 구성된 함수를 순서대로 실행하는 새 함수를 반환한다.
+    this.http.get<board[]>('/api/api/back/board/getAllPost').subscribe(data => this.board = data)
+    console.log(this.board)
+  }
 ```
 
