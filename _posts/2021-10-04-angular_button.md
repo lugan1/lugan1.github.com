@@ -168,7 +168,7 @@ span {
 
 <br/>
 
-## Angular Matrial App-module 에 임포트
+## Angular Material App-module 에 임포트
 - app-module.ts 에 다음과 같은 내용 추가
 
 ```javascript
@@ -185,7 +185,7 @@ imports: 에 다음과 같은 항목 추가
 <br/>
 
 
-## CSS 전역 설정에 Matrial 테마 관련 설정 추가, 임포트
+## CSS 전역 설정에 Material 테마 관련 설정 추가, 임포트
 - 전역으로 마테리얼 테마 컬러 설정
 - 구글 기본제공 폰트 아이콘 임포트
 
