@@ -11,6 +11,7 @@ classes: wide
 ---
 # 출저 및 참고 사이트 :  
 [https://programmingsummaries.tistory.com/325](https://programmingsummaries.tistory.com/325)  
+[https://one-it.tistory.com/entry/Promise-%EC%A0%95%EB%A6%AC-asyncawait-%EC%82%AC%EC%9A%A9%EB%B2%95-then%EA%B3%BC%EC%9D%98-%EC%B0%A8%EC%9D%B4](https://one-it.tistory.com/entry/Promise-%EC%A0%95%EB%A6%AC-asyncawait-%EC%82%AC%EC%9A%A9%EB%B2%95-then%EA%B3%BC%EC%9D%98-%EC%B0%A8%EC%9D%B4)
 
 
 
@@ -104,7 +105,36 @@ _promise(매개변수).then( { 성공시 처리함수 구현}, {실패시 처리
 
 <br/>
 <br/>
+
+## 프로미스의 async 와 await
+- 비동기 처리르 없이 코드를 동작하면 undefined 가 출력되는 경우가 있다.
+- Promise를 반환하는 함수 반환값을 사용하기 까지 **코드를 지연시키기 위해 async, await 를 사용한다.** 
+
+Async, await 활용 예제)
+```javascript
+const sampleFunc = async () => {
+    const result = await asyncFunc() // asyncFunc 함수는 Promise 객체를 반환한다.
+
+    // asyncFunc() 함수의 실행결과가 반한되어 result에 할당되기 전까지, await 키워드가 console.log 함수의 실행을 지연시켜준다.
+
+    console.log(result)
+
+    // Proimise 객체를 반환하는 함수 asyncFunc앞에 await 를 붙이고, 이를 포함하는 함수 앞에 async를 붙여준다.
+
+    // await 키워드를 쓰려면 반드시 async 키워드로 선언된 함수 내부여야 한다.
+
+
+}
+```
+
+
 <br/>
+
+## then 과 async/await 의 차이
+- then : { } 코드 블록 밖의 함수는 동기화 불가
+- async / await : { } 코드 블록 밖의 함수도 동기화가 진행됨
+- async/await 를 사용하면 promise.then().catch() 처럼 reject를  잡아낼 수 없기 때문에 try catch 문을 사용해야 한다.
+
 
 
 <br/>
@@ -143,6 +173,8 @@ public getData(): void {
 
 ## HttpClient 에서 제공하는 toPromise() 메서드 사용 예제)
 
+
+Service.TS 파일
 ```javascript
 constructor(
     private http: HttpClient
@@ -155,7 +187,17 @@ public async getData(): Promise<any> {
 ```
 
 <br/>
+
+Component.TS 파일
+```javascript
+any_service : Any_service;
+this.any_service.getData().then(value => 전달받은 값 처리 구현 )
+
+```
+
+
 <br/>
+
 
 ## 보안 문제 등으로 http request url 에 header 를 붙여서 처리하고 싶으면 HttpHeaders 모듈 사용
 
