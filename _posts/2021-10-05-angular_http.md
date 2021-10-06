@@ -108,3 +108,9 @@ interface board{
   }
 ```
 
+<br/>
+<br/>
+
+# (21.10.06 수정) 위 방법들은 Compnent 에서 직접 HTTP 통신 처리를 할때 쓰는방법
+- (API호출)->Service -> Component 순으로 MVVM 패턴을 따라 데이터를 이동하려면 비동기 처리 필요
+- Promise 
