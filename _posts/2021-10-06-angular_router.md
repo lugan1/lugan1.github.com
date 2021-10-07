@@ -115,7 +115,7 @@ constructor(
 ) {}
 ```
 
-## (3) 생성자에 ActivatedRoute 객체안에 있는 id 인자를 참조한다.
+### (3) 생성자에 ActivatedRoute 객체안에 있는 id 인자를 참조한다.
 ```javascript
 ngOnInit() {
   this.route.queryParams.subscribe(params => {
@@ -147,7 +147,7 @@ export class BoardDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.id = params['id'];
+      this.idx = params['idx'];
     });
   }
 }
@@ -155,13 +155,95 @@ export class BoardDetailComponent implements OnInit {
 
 <br/>
 <br/>
+
+
+# URL의 쿼리 인자, 변수값 TS파일로 갖고 오는 방법
+### (1). app-routing.module 에 라우팅 규칙을 추가한다
+```javascript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import {MainComponent} from "./page/main/main.component";
+import {BoardDetailComponent} from "./page/board-detail/board-detail.component";
+import {BoardListComponent} from "./page/board-list/board-list.component";
+ // 라우터 관련 심볼을 로드합니다.
+
+
+
+const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent
+  },
+  {
+    path: 'detail/:idx',
+    component: BoardDetailComponent
+    // :(입력받을 변수)
+  },
+  {
+    path: 'BoardList',
+    component: BoardListComponent
+  }
+];
+
+// NgModule의 imports, exports 배열에 RouterModule을 등록합니다.
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
 <br/>
 
-# 중첩 라우팅 규칙 적용하기
+### (2). 라우터 이동 이벤트에 변수 값을 등록한다.
+```javascript
+[routerLink]="['/BoardList', 'detail', row.idx]"
+//이러면 라우터 이동시에 boardList/detail/(row.idx) 값으로 이동되어진다.
+// [ruouterLintk]= [url주소, 하위url주소, 하위url 주소 형식으로 매개변수값이 되어진다. 즉 url dpeth 지정가능
+
+```
+
+<br/>
+
+### (3.) TS 파일에서 URL의 변수값을 가져온다.
+- this.route.snapshot.params["(가져올 변수명)"] 사용
+
+```javascript
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+@Component({
+  selector: 'app-board-detail',
+  templateUrl: './board-detail.component.html',
+  styleUrls: ['./board-detail.component.scss']
+})
+export class BoardDetailComponent implements OnInit {
+
+  postIdx : number | undefined;
+
+
+  constructor(private route : ActivatedRoute) {
+    this.postIdx = this.route.snapshot.params["idx"]
+  }
+
+
+  ngOnInit(): void {
+    console.log("idx 변수값 : "+this.postIdx);
+  }
+
+}
+```
+
+
+<br/>
+
+# 자식 라우팅 규칙 적용하기
 - 애플리케이션이 점점 복잡해지다 보면 특정 컴포넌트 안에서 동작하는 라우팅 규칙을 추가하고 싶은 경우도 있다.
 - 이렇게 중첩된 라우팅 규칙을 **자식 라우팅 규칙(child route)**이라고 한다.
 - 라우팅 규칙을 중첩해서 적용하려면 컴포넌트에 \<router-outlet>을 더 추가해야 한다.
 - 왜냐하면 첫번째 계층에서 동작하는 라우팅 규칙은 AppComponent의 \<router-outlet>안에서 동작하기 때문이다.
+- 자식 라우팅은 페이지 이동이 아니고 컴포넌트가 컴포넌트 아래에 열리는 식으로 작동된다.
+- 예) 블로그에서 카테고리 선택하면 하위 카테고리 열리는 형식
 
 ## 첫번째로 이동할 라우팅 HTML 파일에 다음과 같이 작성한다.
 ```html
@@ -210,3 +292,7 @@ const routes: Routes = [
 - **페이지 이동 하려면 HTML 템플렛에 \<component>\</component> 대신 \<router-outlet>\</router-outlet> 으로 작성해야 한다.**
 
 - **최상위 HTML 에다가 \<router-outlet>
+
+
+
+
