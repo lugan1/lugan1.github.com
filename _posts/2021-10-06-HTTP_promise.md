@@ -173,7 +173,6 @@ public getData(): void {
 
 ## HttpClient 에서 제공하는 toPromise() 메서드 사용 예제)
 
-
 Service.TS 파일
 ```javascript
 constructor(
@@ -194,8 +193,14 @@ any_service : Any_service;
 this.any_service.getData().then(value => 전달받은 값 처리 구현 )
 
 ```
+<br/>
+<br/>
+
+# **Promise 로 HTTP 통신을 하면 콜백 이벤트가 한번만 발생해서 (1회성), Subscribe 로 해줘야 한다.**
+- Promise 는 콜백 이벤트가 한번만 발생하고, Subscribe 는 콜백이벤트가 제한없이 발생해서 HTTP 통신으로 컴포넌트에 데이터에 넘겨줄때에는 Subscribe 로 넘겨주어야 한다.
 
 
+<br/>
 <br/>
 
 
