@@ -199,10 +199,33 @@ this.any_service.getData().then(value => 전달받은 값 처리 구현 )
 # **Promise 로 HTTP 통신을 하면 콜백 이벤트가 한번만 발생해서 (1회성), Subscribe 로 해줘야 한다.**
 - Promise 는 콜백 이벤트가 한번만 발생하고, Subscribe 는 콜백이벤트가 제한없이 발생해서 HTTP 통신으로 컴포넌트에 데이터에 넘겨줄때에는 Subscribe 로 넘겨주어야 한다.
 
-
 <br/>
 <br/>
 
+**앵귤러 HTTP 통신 처리과정. (Rx 패턴 사용)**
+
+![angular_http_process.png](/assets\image\posts_image\angular_http_process.png)
+
+<br/>
+
+### **Http통신을 완료하고, 컴포넌트에서 subscribe로 옵저버블 객체 이벤트를 구현할때, router.navigate 로 페이지를 이동시킬 수 있다.**
+```javascript
+  openDeleteDialog():void{
+    const dialogRef = this.dialog.open(DeleteDialog, { width: '300px', disableClose: true })
+      .afterClosed()
+      .subscribe(result =>{
+        if(result = true){
+          // 다이얼로그 응답 결과가 true, 즉 삭제 확인 버튼을 눌렀으면
+
+          this.boardService.deleteBoard(this.postIdx).subscribe(data => { this.router.navigate(['/BoardList']) });
+          // 현재 idx 게시글 수정(state=0)을 API에 요청
+          // sbucribe() : HTTP 통신이 완료되면 navigate 메소드로 /boardList URL로 이동
+
+        }
+    });
+```
+
+<br/>
 
 ## 보안 문제 등으로 http request url 에 header 를 붙여서 처리하고 싶으면 HttpHeaders 모듈 사용
 
@@ -210,3 +233,5 @@ this.any_service.getData().then(value => 전달받은 값 처리 구현 )
 <br/>
 
 ## Http 요청받으면 intercept -> 새로운 헤더를 붙여 복제 및 요청하는 방법 : HttpInterceptor
+
+##
