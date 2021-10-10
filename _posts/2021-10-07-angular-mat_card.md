@@ -47,28 +47,27 @@ classes: wide
 
 소스코드)  
 **html 파일**
+
 ```html
+
 <mat-list>
   <div mat-subheader>Folders</div>
   <mat-list-item *ngFor="let folder of folders">
     <mat-icon mat-list-icon>folder</mat-icon>
-    <div mat-line>{{folder.name}}</div>
-    <div mat-line> {{folder.updated | date}} </div>
+    <div mat-line>폴더이름 데이터값</div>
+    <div mat-line>날짜 데이터값 | date </div>
   </mat-list-item>
   <mat-divider></mat-divider>
   <div mat-subheader>Notes</div>
   <mat-list-item *ngFor="let note of notes">
     <mat-icon mat-list-icon>note</mat-icon>
-    <div mat-line>{{note.name}}</div>
-    <div mat-line> {{note.updated | date}} </div>
+    <div mat-line>노트이름 데이터값</div>
+    <div mat-line> 노트 날짜 데이터값 | date </div>
   </mat-list-item>
-</mat-list>
+</mat-list> 
 
-
-<!-- Copyright 2021 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
 ```
+
 
 **TS파일**
 ```javascript

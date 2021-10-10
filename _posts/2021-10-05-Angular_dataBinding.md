@@ -18,8 +18,8 @@ classes: wide
 
 # Angular 데이터 바인딩
 데이터 바인딩 방법 3가지
-- ${ 변수명 } : String Interpolation 
-- [ 속성값 ] :  Property Binding
+- \$\{ 변수명 \} : String Interpolation 
+- \[ 속성값 \] :  Property Binding
 - ngModel
 
 <br/>
@@ -32,7 +32,7 @@ classes: wide
 ## String Interpolation
 - 단방향 데이터 바인딩
 - TS파일의 변수를 HTML 템플릿으로 가져와 보여주는 것
-- **${{ 변수명 }} : String Interpolation** 형식으로 사용
+- **$\{\{ 변수명 \}\} : String Interpolation** 형식으로 사용
 
 <br/>
 
@@ -48,7 +48,7 @@ import { Observable } from 'rxjs/Rx';
     styleUrls: [ './budget.component.css' ]
 })
 // budget 변수를 HTML template 에서 바인딩해서 사용
-// 바인딩 방법 ${{ 변수명 }}
+// 바인딩 방법 Strng interplation
 
 export class BudgetComponent implements OnInit{
     budget: number = 0;

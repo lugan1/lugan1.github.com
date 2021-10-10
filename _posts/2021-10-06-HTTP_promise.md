@@ -132,8 +132,8 @@ const sampleFunc = async () => {
 <br/>
 
 ## then 과 async/await 의 차이
-- then : { } 코드 블록 밖의 함수는 동기화 불가
-- async / await : { } 코드 블록 밖의 함수도 동기화가 진행됨
+- then : \{ \} 코드 블록 밖의 함수는 동기화 불가
+- async / await : \{ \} 코드 블록 밖의 함수도 동기화가 진행됨
 - async/await 를 사용하면 promise.then().catch() 처럼 reject를  잡아낼 수 없기 때문에 try catch 문을 사용해야 한다.
 
 
@@ -153,7 +153,7 @@ constructor(
 ) {}
  
 public getData(): void {
-    this.http.get('{{ request uri }}')
+    this.http.get('request url')
     .subscribe((data: any): void => {
         //do somthing with data
     }, error => {
@@ -181,8 +181,8 @@ constructor(
 ) {}
  
 public async getData(): Promise<any> {
-    return await this.http.get('{{ request uri }}').toPromise();
-    //or return await this.http.get('{{ request uri }}').toPromise() as Data;
+    return await this.http.get('request url').toPromise();
+    //or return await this.http.get('request url').toPromise() as Data;
 }
 ```
 
