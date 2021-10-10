@@ -9,6 +9,7 @@ categories:
 date: '2021-10-06 08:54:00'
 classes: wide
 ---
+
 # 출저 및 참고 사이트 :  
 [https://programmingsummaries.tistory.com/325](https://programmingsummaries.tistory.com/325)  
 [https://one-it.tistory.com/entry/Promise-%EC%A0%95%EB%A6%AC-asyncawait-%EC%82%AC%EC%9A%A9%EB%B2%95-then%EA%B3%BC%EC%9D%98-%EC%B0%A8%EC%9D%B4](https://one-it.tistory.com/entry/Promise-%EC%A0%95%EB%A6%AC-asyncawait-%EC%82%AC%EC%9A%A9%EB%B2%95-then%EA%B3%BC%EC%9D%98-%EC%B0%A8%EC%9D%B4)

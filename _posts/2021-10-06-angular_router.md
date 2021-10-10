@@ -1,5 +1,5 @@
 ---
-title: "[angular] Component 간에 페이지 이동하기 (router)"
+title: "[angular] Component 간에 페이지(page) 이동하기 (router)"
 tags:
 - log
 - angular
