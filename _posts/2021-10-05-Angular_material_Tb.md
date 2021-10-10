@@ -22,6 +22,8 @@ classes: wide
 - 왼쪽 Project Explorer 에서 Node_modules 마우스 오른쪽 클릭 -> Mark Derectory -> not excloded
 - file -> invalidate caches / Restart
 
+<br/>
+<br/>
 
 ## HTML 파일에 MatTable 추가
 ```html
