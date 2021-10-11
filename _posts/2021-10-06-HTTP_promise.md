@@ -196,6 +196,7 @@ this.any_service.getData().then(value => 전달받은 값 처리 구현 )
 ```
 <br/>
 <br/>
+<br/>
 
 # **Promise 로 HTTP 통신을 하면 콜백 이벤트가 한번만 발생해서 (1회성), Subscribe 로 해줘야 한다.**
 - Promise 는 콜백 이벤트가 한번만 발생하고, Subscribe 는 콜백이벤트가 제한없이 발생해서 HTTP 통신으로 컴포넌트에 데이터에 넘겨줄때에는 Subscribe 로 넘겨주어야 한다.
@@ -235,4 +236,64 @@ this.any_service.getData().then(value => 전달받은 값 처리 구현 )
 
 ## Http 요청받으면 intercept -> 새로운 헤더를 붙여 복제 및 요청하는 방법 : HttpInterceptor
 
-##
+<br/>
+<br/>
+
+# Promise 와 Observable 차이점
+## 출저 및 참고 사이트 :  
+[https://moaimoai.tistory.com/309](https://moaimoai.tistory.com/309)  
+
+[https://blog.briebug.com/blog/what-is-the-difference-between-promises-and-observables](https://blog.briebug.com/blog/what-is-the-difference-between-promises-and-observables)
+
+<br/>
+<br/>
+
+
+## **공통점** :  
+- 둘다 비동기적인 함수를 동기화해서 사용할때 사용한다.
+
+## **차이점** :   
+ - **Promise** 
+    - 하나의 값에 대해 resolve 하거나 reject 한다.
+    - 한번에 하나의 값에 대해서만 async 비동기 처리를 한다.
+    - 한번 완료된 async 값을 resolve 하고나면 더이상 사용이 불가능하고 취소를 할수 없다. 
+
+ - **Observable**
+    - 다수의 비 동기적인 값들을 처리할 수 있다.
+    
+    - 다수의 비 동기적인 값, 이벤트 스트림을 처리할때 사용한다.
+    
+    - 많은 task나 value의 값들을 처리할 때 사용한다. 매 시간마다 pipe의 입구로 자동적으로 들어오는 값들을 처리할때 사용한다.
+    
+    - 언제든지 값을 push 할수 있고, subscribe로 자동적으로 처리할 수 있다.
+    
+    - 인풋값이 바뀌거나 특정시간마다 반복될 때 , 모든 자식 컴포넌트에게 값을 전달하고 싶을 때, 웹 소켓이 notification 을 푸시하고 싶을때 사용한다.
+    
+    - **unsubscribe 를 사용하면 언제든지 이벤트 자동 등록을 취소할 수 있다.**
+
+    - **가장 중요한 부분은 rx/js 의 오퍼레이터를 제공한다는 것이다.**
+
+    - **map, filter, switchMap, combineLatest 의 오퍼레이터들을 pipe로 사용할 수 있고, subscribe를 하기전에 값을 transform 할수도 있다.**
+
+
+
+<br/>
+
+## Promise 동작 방식
+
+![async_promise.png](/assets\image\posts_image\post_angular_async\async_promise.png)    
+
+<br/>
+<br/>
+
+## Observable 동작 방식
+![async_observable.png](/assets\image\posts_image\post_angular_async\async_observable.png)
+
+<br/>
+<br/>
+
+## 연속된 Observable 동작 방식
+- Subscribe 에서 observable을 다른 Subscribe로 넘겨준다.
+- Subject : 다른 subscribe에서 next 함수로 넘겨받은 observable
+
+![async_observable_cahin.png](/assets\image\posts_image\post_angular_async\async_observable_chain.png)
