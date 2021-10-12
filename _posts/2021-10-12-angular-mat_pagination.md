@@ -143,8 +143,9 @@ HTML파일 소스
 
 ```SQL
         select R1.* FROM(
-            SELECT * FROM lee_board
-            ) R1
+            SELECT idx, title, writer, writeDate, hit, state 
+            FROM lee_board
+            WHERE state = 1) R1
         order by idx desc
         LIMIT 10 OFFSET 0
-        ```
+```
