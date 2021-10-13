@@ -131,6 +131,7 @@ HTML파일 소스
 - dataSource의 데이터를 TS파일에서 MatTableDataSource 가 아닌 , data: any = [];  자료형으로 바꾼다.
 
 
+asdfasdf
 
 ### SQL
 - Limit : 몇개 가져올건지
