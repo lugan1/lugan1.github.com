@@ -22,8 +22,6 @@ classes: wide
 - 왼쪽 Project Explorer 에서 Node_modules 마우스 오른쪽 클릭 -> Mark Derectory -> not excloded
 - file -> invalidate caches / Restart
 
-<br/>
-<br/>
 
 ## HTML 파일에 MatTable 추가
 ```html
@@ -55,10 +53,19 @@ classes: wide
 ```html
 <p>board-list component!</p>
 <mat-table [dataSource]="dataSource">
+  <!-- TS 파일의 key1 : value1 , key2 : value2 형식의 배열이 datasurce 고, mat-table의 datasource 속성에 값으로 들어간다.-->
+
   <!-- Amount Column -->
   <ng-container matColumnDef="amount">
+    <!--Data Soource 의 key 값을 적는다. amount : 1000 이면 amount 를 적는다.-->
+
+    <!-- mat-header-cell : 제목이 들어간다.  -->
     <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+
+    <!-- mat-cell : 어떤 데이터를 보여줄지를 넣는다. 변수.key 값을 적으면 해당 key 값의 value를 늘어놓는다. -->
     <mat-cell *matCellDef="let consumption"> {{consumption.amount}} </mat-cell>
+    <!-- consumption 변수를 만들고, consmption.amout 값을 표시한다. 즉 key amount 의 value를 표시한다. -->
+
   </ng-container>
 
   <!-- Description Column -->
@@ -68,10 +75,12 @@ classes: wide
   </ng-container>
 
   <!-- Row Template -->
+  <!-- amount 와 desc를 각각 row로 설정한다. -->
   <mat-header-row *matHeaderRowDef="['amount','desc']"></mat-header-row>
   <mat-row *matRowDef="let consumption; columns: ['amount','desc'];">
   </mat-row>
 
+</mat-table>
 </mat-table>
 ```
 

@@ -18,8 +18,8 @@ classes: wide
 
 # Angular 데이터 바인딩
 데이터 바인딩 방법 3가지
-- \$\{ 변수명 \} : String Interpolation 
-- \[ 속성값 \] :  Property Binding
+- ${ 변수명 } : String Interpolation 
+- [ 속성값 ] :  Property Binding
 - ngModel
 
 <br/>
@@ -32,7 +32,7 @@ classes: wide
 ## String Interpolation
 - 단방향 데이터 바인딩
 - TS파일의 변수를 HTML 템플릿으로 가져와 보여주는 것
-- **$\{\{ 변수명 \}\} : String Interpolation** 형식으로 사용
+- **${{ 변수명 }} : String Interpolation** 형식으로 사용
 
 <br/>
 
@@ -48,7 +48,7 @@ import { Observable } from 'rxjs/Rx';
     styleUrls: [ './budget.component.css' ]
 })
 // budget 변수를 HTML template 에서 바인딩해서 사용
-// 바인딩 방법 Strng interplation
+// 바인딩 방법 ${{ 변수명 }}
 
 export class BudgetComponent implements OnInit{
     budget: number = 0;
@@ -107,6 +107,13 @@ HTML 파일
 ## ngModel
 - 양방향 데이터 바인딩
 - HTML에서 변수값 변경하면 TS 파일의 변수값도 변경되고, TS 파일의 변수값을 변경하면, HTML 파일의 변수값이 변경되는 즉 양방향으로 즉각 변수값이 반응되는 형식인듯 하다.
+- ngModel 을 사용하기 위해서는 **FormsModule 이 필요하다.**
+- app-modules-ts 에 imports : 속성에 FormModule 기입 필요
+- **[(ngModel)]="변수명"** 형식으로 사용한다
+- 하지만 **엄밀히 말하면 양방향 바인딩은 아니다.**
+- ngModel 은 내부적으로 프로퍼티 바인딩 -> 이벤트 바인딩 으로 동작한다.
+- [ngModel]="budget", (ngModelchagne)="budget = $evnet"
+
 
 
 

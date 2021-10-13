@@ -8,6 +8,7 @@ categories:
 - angular
 date: '2021-10-05 11:58:00'
 classes: wide
+last_modified_at: '2021-10-13 10:45:00 +0900'
 ---
 
 # HttpClientModule
@@ -47,7 +48,12 @@ classes: wide
 <br/>
 <br/>
 
-HttpCleint 사용, Get 요청 사용 예제)
+## HttpCleint 사용, Get 요청 사용 예제)
+- **Http get 통신에서는 body를 사용하지 않는다.**
+- **매개변수가 필요하면 url에 query 를 넣는 식으로 한다.**
+- Http.get(url, option\{params:params}) 를 해보니 params 가 url에 쿼리 형식으로 들어갔다. 그 외에 get 옵션값에는 body 넣는것이 없다. 
+- 즉 get 요청에서 매개변수가 필요한경우 url 에 매개변수를 넣어야한다.
+
 ```javascript
 
 interface board{
@@ -68,6 +74,9 @@ interface board{
       .do(console.log);
   }
 ```
+
+
+
 
 ## Property 'map' does not exist on type 'Observable<Response>' 에러 뜰시에 해결방법
 - [https://stackoverflow.com/questions/37208801/property-map-does-not-exist-on-type-observableresponse](https://stackoverflow.com/questions/37208801/property-map-does-not-exist-on-type-observableresponse)

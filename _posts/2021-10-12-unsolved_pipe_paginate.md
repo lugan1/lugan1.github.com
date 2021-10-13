@@ -21,3 +21,5 @@ date: '2021-10-12 14:36:00'
 - 이방법을 쓰면 대신, ngx-editor 가 app-modules 에서 import 가 안된다.
 
 - 다른 방법을 찾아보아야 겠다.
+
+- app-modules 에서 NgxEditorModule 이 빨간줄을 띄우지만, 런타임을 돌려보면, 정상적으로 실행되고 보여진다.
