@@ -12,8 +12,15 @@ classes: wide
 # MyBatis의 동적 SQL
 - if문, 구문을 지정해서 불러오기 재사용 등의 기능
 
+<br/>
+<br/>
+
 # mybatis-SQL.xml 에 SQL 모듈로 해서 재사용, if문 사용방법
 - SQL 전체가 아니라 SQL 에서 작은 구문만 지정해서 구문을 불러올 수도 있다.
+
+
+<br/>
+<br/>
 
 ## SQL 모듈로 만들어서 다른 SQL 에서 불러와서 재사용 방법
 - SQL id 를 지정한다. SQL 태그로 감싼 sql 이 실행된다.
@@ -89,7 +96,7 @@ classes: wide
 <br/>
 
 예제)
-CDATA 사용 (X)
+**CDATA 사용 (X)**
 ```xml
 <select id="findAll" resultMap="MemberResultMap">
     select *
@@ -102,7 +109,7 @@ CDATA 사용 (X)
 <br/>
 <br/>
 
-CDATA 사용
+**CDATA 사용**
 ```xml
 <select id="findAll" resultMap="MemberResultMap">
     <![CDATA[
@@ -120,7 +127,7 @@ CDATA 사용
 <br/>
 <br/>
 
-조건문 태그에서 CDATA 사용
+**조건문 태그에서 CDATA 사용**
 ```xml
 <select id="findAll" resultMap="MemberResultMap">
     <![CDATA[
