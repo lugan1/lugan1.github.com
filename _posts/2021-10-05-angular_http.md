@@ -8,7 +8,7 @@ categories:
 - angular
 date: '2021-10-05 11:58:00'
 classes: wide
-last_modified_at: '2021-10-13 10:45:00 +0900'
+last_modified_at: '2021-10-18 04:00:00 +0900'
 ---
 
 # HttpClientModule
@@ -122,4 +122,47 @@ interface board{
 
 # (21.10.06 수정) 위 방법들은 Compnent 에서 직접 HTTP 통신 처리를 할때 쓰는방법
 - (API호출)->Service -> Component 순으로 MVVM 패턴을 따라 데이터를 이동하려면 비동기 처리 필요
-- Promise 
+- Promise
+
+<br/>
+<br/>
+<br/>
+
+# (21.10.18 수정) GET 요청에서 url에 Query Params 를 담아서 요청하는 방법
+```typescript
+
+//get('url', option) 에 들어갈 option 값 설정
+const option = {
+  params : {
+    쿼리key1 : 쿼리value1,
+    쿼리key2 : 쿼리value2
+    ....
+  }
+}
+
+http.get.('url',option)
+//get 메소드의 두번째 매개변수로 앞서 생성한 option 을 집어넣는다.
+```
+
+<br/>
+<br/>
+
+**실사용 예제**
+```typescript
+  public getBoardList(page_limit : number, page_offset : number, search_option?: string, search_word?:string) : Observable<ListResponse>{
+
+    // 매개변수와, value 값 이름이 같으면 key:value 를 하지 않아도, params: { 매개변수1, 매개변수2 } 형식으로 생성이 가능하다.
+    const options = {
+      params: {
+        page_limit,
+        page_offset,
+        search_option: search_option ?? '',
+        search_word: search_word ??''
+      },
+    };
+
+    return this.http.get<ListResponse>('/api/api/back/board/getBoardList', options);
+    // page_limit , page_offset url 파라미터로 API 에 게시글 리스트를 조회한다.
+  }
+  ```
+

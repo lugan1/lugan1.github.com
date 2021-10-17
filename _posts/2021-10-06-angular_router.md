@@ -8,7 +8,12 @@ categories:
 - angular
 date: '2021-10-06 14:41:00'
 classes: wide
+last_modified_at: '2021-10-17 14:02:01 +0900'
 ---
+
+
+
+
 
 # Angular Routing
 - 홈페이지 작업시 프론트 엔드에서 기능해야할 필수 요소중 하나
@@ -294,5 +299,167 @@ const routes: Routes = [
 - **최상위 HTML 에다가 \<router-outlet>
 
 
+<br/>
+<br/>
+<br/>
+
+# URL 디자인 방법
+## 1. Path Variable
+- 가공되지 않은 정적 자원을 특정해서 보여줄때 사용.
+- 예) users/1234
+- 특정 자원에 대한, 어떤것을 하자는 동사는 빠져있는데 그 역할을 하는 것이 HTTP 메소드이다.
+
+<br/>
+
+## 2. Query Params
+- 어떤 자원을 재가공해서 정렬하거나, 필터링 해서 보여줄때,매개변수를 URL에 담아서 back end 에 보낼때 사용한다.
+- Path Variable 방식도 JSON 객체에 매개변수를 담아서 back end 에 보내줄 수 있지만, GET방식을 사용시에 JSON BODY를 담아서 보내는 방식은 지양해야되서 보통 Query Params 를 많이 사용한다.
+
+- 예) BoardList?page=1&option=content&word=testword
+
+<br/>
+
+## 3. URL에서 동사는 사용하지 않는 것이 좋다.
+
+## 4. 변수가 앞에오고, 그 뒤에 변수를 수식하는 단어가 오는것이 좋다.
+
+예)BoardList/modify/:idx 형식이 아닌 BoardList/:idx/editor 형식으로. 페이지 번호가 앞에오고, 그뒤에 수식자가 옴
 
 
+<br/>
+<br/>
+<br/>
+
+# Angular Query Parms 방법으로 URL 라우팅하는 방법
+## 참고 및 출저 :  
+[https://www.digitalocean.com/community/tutorials/angular-query-parameters](https://www.digitalocean.com/community/tutorials/angular-query-parameters)
+
+----------------------------------------------
+
+<br/>
+
+<br/>
+
+## app-routing-modules.ts 에 다음과 같이 설정한다.
+
+<br/>
+
+**app-routing-modules.ts**
+```typescript
+const routes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'BoardList', component: BoardListComponent }
+```
+
+- 즉 BoardList 에 대한 Query를 하겠다는 것이다.
+- BoardList?page=1 이런식으로 Query 한다.  
+
+<br/>
+
+## URL을 라우팅할 이벤트에 BoardList URL에 대한 queryParmas 를 지정한다.
+
+- 예)
+
+```typescript
+router.navigate['Base URL 주소'], \{queryParams:}\{ 쿼리할key:쿼리value, 쿼리할key2:쿼리value2 ...}
+```
+
+
+<br/>
+
+
+**BoardList.ts**
+```typescript
+this.router.navigate(['/BoardList'], {queryParams:{ page : this.page, search_option : this.FC_search_option, search_word : this.FC_search_word }});
+    // URL을 클릭한 page 번호로 변경
+```
+- 이벤트 발동시 **BoardList?page=1&search_option='title'&search_word='테스트'** 형식으로 Routing 된다.
+
+<br/>
+
+-----------------------------------------
+
+
+<br/>
+<br/>
+
+## queryParams URL 에서 매개변수의 값을 가져오는 방법
+- **activatedRoute.snapshot.queryParams** 사용
+
+예)
+```typescript
+this.page = activatedRoute.snapshot.queryParams['page'] ?? 1;
+// URL에서 BoardList?page=1 이면 'page' 에 해당하는 매개변수 값을 this.page 에 집어넣는다. null 값이면 1을 집어넣는다.
+```
+
+<br/>
+
+## ActivatedRoute 객체
+### 공홈 API 문서
+[https://angular.kr/api/router/ActivatedRoute#snapshot](https://angular.kr/api/router/ActivatedRoute#snapshot)
+
+<br/>
+<br/>
+
+
+## ActivatedRoute Class
+- 아웃렛에 로드된 구성 요소와 연결된 경로에 대한 정보에 대한 액세스를 제공합니다. 이 명령을 사용하여 라우터 상태 트리를 이동하고 노드에서 정보를 추출합니다.
+
+<br/>
+
+### 속성들
+|Property|return Type|Descripton|
+|--------|-----------|----------|
+|snapshot|ActivatedRouteSnapshot|이 경로의 현재 스냅샷|
+|url|Observable\<UrlSegment\[ ]>|이 경로와 일치하는 URL 세그먼트의 관찰 가능 항목입니다.|
+|params|Observable\<Params>|이 경로로 범위가 지정된 행렬 매개변수의 관찰 가능 항목입니다.|
+|queryParams|Observable\<Params>|모든 경로가 공유하는 쿼리 매개변수의 관찰 가능 항목입니다.|
+|fragment|Observable\<string \| null\>|모든 경로에서 공유하는 URL 조각의 관찰 가능 항목입니다.|
+|data|Observable\<Data>|이 경로의 정적 및 확인된 데이터의 관찰 가능 항목입니다.|
+|outlet|string|경로의 outlet 이름, 상수입니다.|
+|compoent|Type\<any> \| string \| null|경로의 구성 요소, 상수입니다.|
+|routeConfig|Route \| null|이 경로를 일치시키는 데 사용되는 구성입니다.|
+|root|ActivatedRoute|라우터 상태의 루트입니다.|
+|parent|ActivatedRoute \| null|라우터 상태 트리에서 이 경로의 부모입니다.|
+|firstChild|ActivatedRoute \| null|라우터 상태 트리에서 이 경로의 첫 번째 자식입니다.|
+|childern|ActivatedRoute\[ ]|라우터 상태 트리에서 이 경로의 자식입니다.|
+|pathFromRoot|ActivatedRoute\[ ]|라우터 상태 트리의 루트에서 이 경로까지의 경로입니다.|
+|paramMap|Observable\<ParamMap>|경로에 특정한 필수 및 선택적 매개변수의 맵을 포함하는 Observable입니다. 맵은 동일한 매개변수에서 단일 및 다중 값 검색을 지원합니다.|
+|queryParamMap|Observable\<ParamMap>|모든 경로에 사용할 수 있는 쿼리 매개변수의 맵을 포함하는 Observable입니다. 맵은 쿼리 매개변수에서 단일 및 다중 값 검색을 지원합니다.|
+
+
+<br/>
+<br/>
+
+## 	ActivatedRouteSnapshot Class
+- 특정 시점에 outlet에 로드된 구성 요소와 연결된 경로에 대한 정보를 포함합니다. ActivatedRouteSnapshot을 사용하여 라우터 상태 트리를 탐색할 수도 있습니다.
+
+### 속성들
+
+|Property|return Type|Descripton|
+|--------|-----------|----------|
+|routeConfig|Route\| null|이 경로와 일치하는 데 사용되는 구성 *|
+|url|UrlSegment\[ ]|이 경로와 일치하는 URL 세그먼트|
+|params|Params|이 경로로 범위가 지정된 행렬 매개변수입니다.|
+|**queryParams**|**Params**|**모든 경로에서 공유하는 쿼리 매개변수 value**|
+|fragment|string \| null |모든 경로가 공유하는 URL 조각|
+|data|Data|이 경로의 정적 및 확인된 데이터|
+|outlet|string|경로의 outlet 이름|
+|component|Type\<any>\|string\|null|경로의 구성 요소|
+|root|ActivatedRouteSnapshot|라우터 상태의 루트|
+|parent|ActivateRouteSnapshot\|null|라우터 상태 트리에서 이 경로의 부모|
+|firstChild|ActivatedRouteSnapshot \| null |라우터 상태 트리에서 이 경로의 첫 번째 자식|
+|children|ActivatedRouteSnapShot\[ ]|라우터 상태 트리에서 이 경로의 자식|
+|pathFromRoot|ActivatedRouteSnapshot\[ ]|라우터 상태 트리의 루트에서 이 경로까지의 경로|
+|paramMap|ParamMap|Read-Only|
+|queryParamMap|ParamMap|Read-Only|
+
+<br/>
+<br/>
+
+### Params 자료형
+```typescript
+type Params = {
+    [key: string]: any;
+};
+```

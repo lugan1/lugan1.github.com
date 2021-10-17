@@ -161,8 +161,15 @@ WHERE state = 1
 order by idx desc
 LIMIT 10 OFFSET 0
 ```
-- HTTP GET 으로 통신하려면 Page 모델 vo 필요. (Page_LIMIT, Page_OFFSET)
-- Page 모델로 요청받고, Response 할때는 Board 모델로 응답하는 형태.
+- ~~HTTP GET 으로 통신하려면 Page 모델 vo 필요. (Page_LIMIT, Page_OFFSET)~~
+- ~~Page 모델로 요청받고, Response 할때는 Board 모델로 응답하는 형태.~~
+
+- GET 요청을 할때는 json body 사용은 지양 해야 한다.
+- **url의 Params로 GET 요청하고, 받을때는 Board VO 모델에 메타데이터 헤더를 달아서 받는 형식**
+- 메타데이터 예시) 
+   - TotalCount: DB에 있는 게시글의 총 갯수
+   - Offset : 어디서 부터 가져올건지
+   - List\<Board> : 게시글들의 리스트
 
 <br/>
 <br/>
@@ -282,7 +289,10 @@ public class StudyBoardHeader {
     </div>
 ```
 
-MovePage 이벤트 처리 javascript
+<br/>
+<br/>
+
+MovePage 이벤트 처리 TS
 ```javascript
   movePage(page : any) : void {
     // 클릭한 page 로 url 이동

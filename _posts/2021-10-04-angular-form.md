@@ -8,6 +8,7 @@ categories:
 - angular
 date: '2021-10-04 11:02:00'
 classes: wide
+last_modified_at: '2021-10-18 04:44:00'
 ---
 
 # 출저 및 참고 사이트
@@ -305,3 +306,13 @@ HTML파일
 ### 실행화면
 
 ![angular_formbuilder.png](/assets\image\posts_image\angular_formbuilder.png)
+
+
+<br/>
+<br/>
+
+## **subscribe 가 아닌, 특정 타이밍에만 FromControl 값 가져오기**
+```typescript
+    const { fc_id } = this.fg_join.controls
+    console.log(fc_id.value)
+```

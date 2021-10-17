@@ -63,14 +63,16 @@ classes: wide
   - 예제)
   ```xml
     <choose>
+    (중복되는 어절은 밖으로 빼낼수 있다.)
+    where state 1
         <when test="조건문">
-            SQL 구문
+         AND  SQL 구문
         </when>
         <when test="조건문">
-            SQL 구문
+         AND  SQL 구문
         </when>
         <otherwise>
-            SQL 구문
+         AND  SQL 구문
         </otherwise>
     </choose>
   ```
