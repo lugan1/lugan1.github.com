@@ -66,11 +66,11 @@ export class DialogElementsExampleDialog {}
 <br/>
 
 # 다이얼로그에 데이터 전달하는 방법
-1. 다이얼로그를 띄우는 메소드 매개변수에 { data : { key : value } } 를 추가한다.
+1. 다이얼로그를 띄우는 메소드 매개변수에 \{ data : \{ key : value } } 를 추가한다.
 
 ```javascript
-let dialogRef = dialog.open(YourDialog, {
-  data: { name: 'austin' },
+let dialogRef = dialog.open(YourDialog, \{
+  data: \{ name: 'austin' },
 });
 ```
 
@@ -80,7 +80,7 @@ export class YourDialog {
     
     name : string;
     
-    constructor(@Inject(MAT_DIALOG_DATA) public data: {name: string}) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: \{name: string}) \{
         this.name = data.name;
    }
 }
