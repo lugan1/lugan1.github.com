@@ -32,5 +32,21 @@ classes: wide
 |**maxLength**( maxLength: number )|ValidatorFn|입력 값의 길이가 최대 길이보다 작거나 같아야 하는 유효성 검사. 예) 필드가 최대 5자인지 확인, 실패시 오류맵 반환|
 |**pattern**( pattern \| string \| RegExp)|ValidatorFn |정규식 패턴과 일치하는지 유효성 검사|
 |**nullValidator**( control : AbstractControl)|ValidatorErros \| null |작업을 수행하지 않는 유효성 검사.|
-|**compose**|( validators : ValidatorFn\[ ])|ValidatorFn \| null |제공된 컨트롤에 대한 개별 오류맵의 합집합을 반환하는 단일 함수로 여러 유효성 검사기를 구성한다. 유효성 검사가 실패하면 유효성 검사기의 병합된 오류 맵과 함께 오류맵을 반환한다.|
-|**composeAsync**|( validators : AsyncValidatorFn\[ ])|AsyncValidatorFn \| null|여러 비동기 유효성 검사기를 제공된 컨트롤에 대한 개별 오류 개체의 합집합을 반환하는 단일 함수로 구성한다. 유효성 검사가 실패하면 비동기 유효성 검사기의 병합된 오류 개체와 함께 오류 맵을 반환한다.|
+|**compose**( validators : ValidatorFn\[ ])|ValidatorFn \| null |제공된 컨트롤에 대한 개별 오류맵의 합집합을 반환하는 단일 함수로 여러 유효성 검사기를 구성한다. 유효성 검사가 실패하면 유효성 검사기의 병합된 오류 맵과 함께 오류맵을 반환한다.|
+|**composeAsync** ( validators : AsyncValidatorFn\[ ])|AsyncValidatorFn \| null|여러 비동기 유효성 검사기를 제공된 컨트롤에 대한 개별 오류 개체의 합집합을 반환하는 단일 함수로 구성한다. 유효성 검사가 실패하면 비동기 유효성 검사기의 병합된 오류 개체와 함께 오류 맵을 반환한다.|
+
+
+## From-control 에 Validator 사용방법
+- Form Builder 로 Form Group 을 빌드시에 사용할 수 있다.
+
+사용 예제)
+```typescript
+FormControl : formbuilder.control('입력기본값', [
+    Validator.옵션1
+    Validator.옵션2
+    .....
+    Validator.옵션n
+] )
+```
+
+
