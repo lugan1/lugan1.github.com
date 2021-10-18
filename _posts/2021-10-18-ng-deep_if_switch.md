@@ -103,17 +103,46 @@ classes: wide
 
 <br/>
 
+## **ng-if 와 ng-show 의 차이점**
+- ng-show는 비교문과 상관 없이 무조건 돔을 생성한다. (ng-if 는 조건이 되어야지 생성이 된다.)
+- ng-show 는 기능적으로 class="ng-hide" 클래스가 추가되어 결과적으로 display : none 스타일 속성이 추가되어 뷰에서 감춰진다.
+- ng-if 는 조건문이 false 일 경우 돔을 만들지 않고, 주석문만 남겨진다.
+
+<br/>
+
+예시)
+![ng-if_and_ng-show.png](/assets\image\posts_image\ng-if_and_ng-show.png)
+
+
+<br/>
+
 ## **4. ng-class**
 - Angular로 HTML 요소에 CSS 클래스를 동적으로 줄 수 있는 디렉티브다.
 - ng-class "\{css속성값&class명 : 조건식}"
 ```html
-<p ng-class="{strike: true, bold: false, red: true}">Example</p>
+<p ng-class="\{strike: true, bold: false, red: true}">Example</p>
 ```
 
-
+<br/>
+<br/>
+<br/>
 
 
 # ng-for
+
+사용예시)
+```html
+<ul> 
+  <li *ngFor="let hero of heroes"> \{\{ hero }} </li> 
+</ul>
+```
+- '*' 을 사용하여 TS파일의 객체와 변수를 바인딩해서 사용할 수 있다.
+
+- *ngFor="let 변수 of List" 형식으로 사용한다.
+
+- 파이썬의 i in List 와 같다. List의 원소가 변수에 차례대로 들어가며, 원소의 갯수만큼 반복 실행된다.
+
+- 해당 엘리먼트 코드블럭 \<element></element> 까지 반복실행된다. 그 안에서의 변수는 let 변수를 가져와서 사용할 수 있다.
 
 
 
