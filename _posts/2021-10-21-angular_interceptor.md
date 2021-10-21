@@ -122,8 +122,6 @@ const secureReq = req.clone({
 return next.handle(secureReq);
 ```
 
-
-
 <br/>
 
 - **HttpHandler** : Http Request 를 다음 행동으로 넘기는 역활을 한다.
@@ -151,3 +149,58 @@ return next.handle(secureReq);
 
 - SQL의 Select Where 랑 같음. 조건에 해당되는 값만 뽑아냄
 - filter(매개변수 => **매개변수에 대한** 조건식)
+
+# RxJS catchError
+- Observable 에서 Subscribe되지 못하는 Exception (error) 가 발생하면 Pipe 단계에서 Error 처리함
+- HTTP ERROR 도 여기에 포함됨
+- HTTP ERROR 가 발생하면 Subscribe 되지 못하는데, pipe() 에서 에러 발생을 처리한다.
+- **발생한 Error 를 throw 해줘야 하는데, return throwError(error) 가 필수다.**
+
+
+<br/>
+
+
+## RxJS CatchError 와 Interceptor를  활용한 리다이렉트 처리 예제)
+
+```typescript
+@Injectable({
+  providedIn: 'root'
+})
+export class ErrorInterceptorService implements HttpInterceptor{
+// HTTP ERROR 발생하면 Error 코드에 따라 Interceptor 처리
+
+  constructor(private router:Router, private dialog:MatDialog) {
+
+  }
+
+  intercept(httpRequest: HttpRequest<any>, httpHandler: HttpHandler): Observable<HttpEvent<any>> {
+
+
+    let request: HttpRequest<any> = httpRequest.clone();
+    // httpRequest를 복사해서 request 변수에 집어넣는다.
+
+    return httpHandler.handle(request).pipe(catchError(err => {
+      // catchError : Observable에서 error 가 발생하면 에러 처리. HTTP ERROR 도 여기에 들어간다.
+
+      if (err.status == 401){
+        // 에러코드가 401 (로그인 실패) 이면 다이얼로그 처리
+        this.dialog.open(ResultDialog,{data:{'title':'로그인 실패', 'content':'아이디와 비밀번호를 확인해 주세요'}});
+      }
+
+      if (err.status == 403){
+        // 에러코드가 403 (forbiden 권한없음) 이면 리다이렉트 처리
+        this.redirect();
+      }
+
+      return throwError(err);
+    }));
+  }
+
+  public redirect(): void {
+    alert('로그인해야 사용할수 있습니다.');
+    this.router.navigate(['/Login']);
+  }
+
+}
+```
+
