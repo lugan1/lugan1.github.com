@@ -18,7 +18,7 @@ classes: wide
 
 # Angular 데이터 바인딩
 데이터 바인딩 방법 3가지
-- ${ 변수명 } : String Interpolation 
+- $\{ 변수명 } : String Interpolation 
 - [ 속성값 ] :  Property Binding
 - ngModel
 
@@ -32,29 +32,29 @@ classes: wide
 ## String Interpolation
 - 단방향 데이터 바인딩
 - TS파일의 변수를 HTML 템플릿으로 가져와 보여주는 것
-- **${{ 변수명 }} : String Interpolation** 형식으로 사용
+- **$\{\{ 변수명 }} : String Interpolation** 형식으로 사용
 
 <br/>
 
 String Interpolation 사용 예제)  
 TS 파일
 ```javascript
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import \{ Component, OnInit } from '@angular/core';
+import \{ Observable } from 'rxjs/Rx';
 
-@Component({
+@Component(\{
     selector: 'app-budget',
     template: `<h3>My Budget: ₩{{budget}}</h3>`,
     styleUrls: [ './budget.component.css' ]
 })
 // budget 변수를 HTML template 에서 바인딩해서 사용
-// 바인딩 방법 ${{ 변수명 }}
+// 바인딩 방법 $\{\{ 변수명 }}
 
 export class BudgetComponent implements OnInit{
     budget: number = 0;
     ngOnInit(){
         let secondTick = Observable.timer(1000,1000);
-        secondTick.subscribe((tick)=>{ this.budget += 1000; });
+        secondTick.subscribe((tick)=>\{ this.budget += 1000; });
     }
 }
 ```
@@ -73,10 +73,10 @@ export class BudgetComponent implements OnInit{
 Property Binding 사용 예제)  
 TS 파일
 ```javascript
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import \{ Component, OnInit } from '@angular/core';
+import \{ Observable } from 'rxjs/Rx';
 
-@Component({
+@Component(\{
     selector: 'app-budget',
     templateUrl: './budget.component.html',
     styleUrls: [ './budget.component.css' ]
@@ -85,7 +85,7 @@ export class BudgetComponent implements OnInit{
     budget: number = 0;
     ngOnInit(){
         let secondTick = Observable.timer(1000,1000);
-        secondTick.subscribe((tick)=>{ this.budget += 1000; });
+        secondTick.subscribe((tick)=>\{ this.budget += 1000; });
     }
 }
 ```
@@ -94,9 +94,9 @@ export class BudgetComponent implements OnInit{
 
 HTML 파일
 ```HTML
-<h3>My Budget: ₩{{budget}}</h3>
+<h3>My Budget: ₩\{\{budget}}</h3>
 <input type="text" [value]="budget">
-<!-- <input type="text" value="{{budget}}">  과 동일하다.  -->
+<!-- <input type="text" value="\{\{budget}}">  과 동일하다.  -->
 
 <button>Add Income</button>
 ```
