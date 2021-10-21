@@ -142,3 +142,12 @@ return next.handle(secureReq);
 
 - request.header.set('헤더에 넣을 이름', value)
 - httpHandler.handle(request) : 수정한 HTTP 요청을 다음 핸들러에 전달한다.
+
+
+
+# RxJS filter
+- 소스 Observable에서 방출한 매개변수 대해서, 어떠한 조건값을 줘서 뽑아내는 함수
+- 매개변수에 대한 조건값에 True를 반환하면 그 조건에 부합하는 값이 생성되고, false 이면 출력 Observable에 값이 전달되지 않는다.
+
+- SQL의 Select Where 랑 같음. 조건에 해당되는 값만 뽑아냄
+- filter(매개변수 => **매개변수에 대한** 조건식)
