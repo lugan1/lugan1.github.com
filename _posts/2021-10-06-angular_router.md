@@ -8,7 +8,7 @@ categories:
 - angular
 date: '2021-10-06 14:41:00'
 classes: wide
-last_modified_at: '2021-10-17 14:02:01 +0900'
+last_modified_at: '2021-10-24 23:40:01 +0900'
 ---
 
 
@@ -65,13 +65,15 @@ const routes: Routes = [
 // 예) localhost:4200/secont-component
 
 // component : 해당 URL 주소에 연결될 컴포넌트를 지정한다.
-
 ...
 
 export class AppRoutingModule{
 
 }
 ```
+
+
+
 
 ## 라우팅 규칙을 애플리케이션에 등록한다.
 - 클릭 링크를 걸 HTML 파일에 라우트 속성의 \<a> 태그를 등록한다.
@@ -463,3 +465,56 @@ type Params = {
     [key: string]: any;
 };
 ```
+
+<br/>
+<br/>
+<br/>
+
+# Routing 규칙도 순서가 있다.
+**app-routing-modules.ts** 에 각 컴포넌트당 URL 주소 등록시에, 등록된 순서대로 라우팅 규칙이 적용된다.
+
+<br/>
+
+예제)
+
+- **BoardList/create 로 이동시에 BoardDetailComponent로 이동이 되어진다.**
+- **BoardList/:idx 가 먼저 적용되어져서 create가 매개변수 value로 작용되어지기 때문**
+
+```typescript
+const routes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'BoardList', component: BoardListComponent },
+  { path: 'BoardList/:idx', component: BoardDetailComponent },
+  { path: 'BoardList/create', component: BoardCreateComponent }
+];
+```
+
+
+<br/>
+<br/>
+
+**올바르게 순서 적용한 예제**
+- BoardList/create 가 위에 있어서 규칙이 먼저 적용된다.
+- 정상적으로 BoardList/create 페이지로 이동이 되어진다.
+```typescript
+const routes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'BoardList', component: BoardListComponent },
+    { path: 'BoardList/create', component: BoardCreateComponent },
+  { path: 'BoardList/:idx', component: BoardDetailComponent }
+];
+```
+
+<br/>
+<br/>
+<br/>
+
+
+# 라우트가드
+- 프론트엔드도 백엔드 처럼 Token의 권한에 따라 페이지를 리다이렉트 시킬수 있다.
+
+- \[path : \'**' \] 같이 path 값에 *를 붙이면 된다.
+
+- 프론트에서 리다이렉트 처리를 한다고 해서 백엔드는 안해야 되는게 아니다. 백엔드도 해야된다.
+
+- post man 같이 API 호출할수 있기 때문에, 프론트 엔드와 백엔드 둘다 인증 권한에 따라 리다이렉트 처리를 해줘야 한다.

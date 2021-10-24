@@ -36,6 +36,9 @@ classes: wide
 |**composeAsync** ( validators : AsyncValidatorFn\[ ])|AsyncValidatorFn \| null|여러 비동기 유효성 검사기를 제공된 컨트롤에 대한 개별 오류 개체의 합집합을 반환하는 단일 함수로 구성한다. 유효성 검사가 실패하면 비동기 유효성 검사기의 병합된 오류 개체와 함께 오류 맵을 반환한다.|
 
 
+<br/>
+<br/>
+
 ## From-control 에 Validator 사용방법
 - Form Builder 로 Form Group 을 빌드시에 사용할 수 있다.
 
@@ -49,4 +52,45 @@ FormControl : formbuilder.control('입력기본값', [
 ] )
 ```
 
+<br/>
+<br/>
 
+
+# 패스워드 / 패스워드 확인 입력창이 같은지 확인하는법
+- 두개의 컨트롤이 같은지 확인하는 validator 옵션이 없어서 따로 validator를 만들어야 한다.
+
+- form builder를 사용해서 Form group 생성할때, 두번째 매개변수 option입력하는곳에 커스텀 validator 를 넣는다.
+
+- 커스텀 validator 를 넣을때에는 FormGroup을 return하는 함수를 넣어야 한다.
+
+```typescript
+formBuilder.group(\{ controlConfig }, \{ option validiater : (함수 : FormGroup) })
+```
+
+<br/>
+<br/>
+
+**패스워드 입력, 입력확인 같은지 유효성 검사 예제**
+
+```typescript
+    this.fg_join = fb.group({ controlConfig },{
+      validators:this.confirmedPassword('fc_pw','fc_verify_pw')
+    })
+
+
+  confirmedPassword(controlName:string, matchingControlName : string){
+    return (formGroup:FormGroup) =>{
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+      if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+        return;
+      }
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ confirmedValidator: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    }
+  }
+
+```  

@@ -150,6 +150,18 @@ return next.handle(secureReq);
 - SQL의 Select Where 랑 같음. 조건에 해당되는 값만 뽑아냄
 - filter(매개변수 => **매개변수에 대한** 조건식)
 
+
+<br/>
+
+# RxJS Tap
+- side effect 로깅과 같은 액션을 수행
+- 중간에만 빠져서 기능처리. 
+- Subscribe까지는 가지 않는다. 
+- 파이프에서 T자 파이프와 같은 역할
+- **T자 파이프에서 l 의 역할. Subscribe로 가는 긴 파이프 통로의 흐름중에 중간에 빠져서 기능처리를 한다.**
+
+<br/>
+
 # RxJS catchError
 - Observable 에서 Subscribe되지 못하는 Exception (error) 가 발생하면 Pipe 단계에서 Error 처리함
 - HTTP ERROR 도 여기에 포함됨

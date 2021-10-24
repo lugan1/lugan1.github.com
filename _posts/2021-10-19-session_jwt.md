@@ -31,9 +31,22 @@ classes: wide
 
 
 
+<br/>
+<br/>
 
 # Session 방식
+## Javax servlet HttpSession 모듈을 사용시 쿠키를 자동 생성해 response한다.
+- SetAttribute로 인증 성공시 쿠키를 자동으로 생성해 클라이언트로 응답한다.
 
+- 쿠키에는 JSESSIONID 값이 들어있다.
+
+- 클라이언트는 로그인 API 요청시에 자동으로 쿠키값도 같이 보낸다. 
+
+- 서버는 쿠키에서 JSSESIONID 를 SESSION DB에서 확인해서 대조하고 인증절차를 밟는다.
+
+<br/>
+<br/>
+<br/>
 
 # JWT 방식
 ## 토큰 로그아웃 방법
