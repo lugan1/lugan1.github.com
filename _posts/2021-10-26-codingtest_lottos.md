@@ -1,6 +1,7 @@
 ---
 title: "[코테] 로또 최고순위와 최저순위 "
 tags:
+- java
 - 코딩테스트
 categories:
 - 코딩테스트
