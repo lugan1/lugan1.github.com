@@ -218,3 +218,5 @@ last_modified_at: '2021-11-03 11:14:00 -0700'
 - **Branch는 포인터일 뿐 commit 이 아니다.**
 
 - Branch를 포인터라 생각하면 편하다.
+
+- origin 뜻은 원격에 commit 이 push 되었다는 상태. 
