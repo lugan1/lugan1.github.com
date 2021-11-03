@@ -170,3 +170,50 @@ classes: wide
 
 - 이 상태에서 git 관리하는 사람이 추가한 브랜치를 origin에 합친다.
 
+<br/>
+<br/>
+<br/>
+
+# 소스트리에서 브랜치 생성시 <span style="color:red">**주의해야 할점**</span>
+- 브랜치를 생성하면 소스트리 History 그래프에서는 이전에 commit push 한 항목옆에 브랜치 태그가 보인다.
+
+<br/>
+
+![git_branch.png](/assets\image\posts_image\git_branch.png)
+
+- 비록 History 에는 새로 생성한 브랜치가 이전에 Commit Push 한 커밋(snapshot)을 가리키고 있지만 당황하지 않는다.
+
+- 가리키고만 있을뿐이지 이전에 commit push 한 것이 그 브랜치로 들어간것이 아니다. 그림으로 요약하면 다음과 같은 상태가 된것이다.
+
+![new_branch.png](/assets\image\posts_image\new_branch.png)
+
+<br/>
+<br/>
+
+- 변경사항을 커밋하면 새로 생성한 브랜치는 그 변경사항을 가리키게 된다.
+
+
+![new_branch_commit.png](/assets\image\posts_image/new_branch_commit.png)
+
+- 아직 push를 하지 않은상태라 origin/testBranch라고 안뜬다.
+
+- push 를 진행하게되면 (testBranch) (origin/testBranch) 라고 변경된다.
+
+![new_branch_push.png](/assets\image\posts_image/new_branch_push.png)
+
+- testBranch가 origin/testBranch Commit 을 가리키고 있다는 뜻이다.
+
+- History에는 master 브랜치에 일자로 커밋 푸시된것처럼 보이지만 아직 merge를 하지 않아서 그렇다.
+
+<br/>
+<br/>
+
+- 그림으로 요약하면 다음과 같은 상태가 된것이다.
+
+![new_branch_summary.png](/assets\image\posts_image/new_branch_summary.png)
+
+- 갈라진 분기의 commit 인 #2021-11-03 commit 테스트를 testBranch가 가리키는 형태다.
+
+- **Branch는 포인터일 뿐 commit 이 아니다.**
+
+- Branch를 포인터라 생각하면 편하다.
