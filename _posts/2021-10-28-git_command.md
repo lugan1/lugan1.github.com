@@ -219,4 +219,17 @@ last_modified_at: '2021-11-03 11:14:00 -0700'
 
 - Branch를 포인터라 생각하면 편하다.
 
-- origin 뜻은 원격에 commit 이 push 되었다는 상태. 
+- origin 뜻은 원격에 commit 이 push 되었다는 상태.
+
+<br/>
+<br/>
+
+# Master가 각 브랜치들 수정사항 merge 되었는지 확인하는 방법
+- Master 혹은 Develop 브랜치에서 merge 가 완료되면 소스트리에서 다음과 같이 표시가 된다.
+
+<br/>
+
+![gitlab_merged_ex.png](/assets\image\posts_image\gitlab_merged_ex.png)
+
+- merge가 완료되면 master 브랜치에서 pull 받으면 병합된 수정사항들이 모두 적용이 된다.
+  - master에서 merge 하기 전에 pull 받으면 수정사항들이 모두 날라간다.
