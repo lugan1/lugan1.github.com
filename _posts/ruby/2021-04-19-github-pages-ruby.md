@@ -8,7 +8,6 @@ tags:
 - blogger
 - jekyll
 categories:
-- Blog
 - ruby
 ---
 

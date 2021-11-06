@@ -2,9 +2,9 @@
 title: "[Python] 기본 문법 정리 (2)"
 tags:
 - python
+- 코딩테스트
 categories:
 - python
-- 코딩테스트
 date: '2021-05-06 13:29:57 +0900'
 classes: wide
 last_modified_at: '2021-09-26 10:26:01 +0900'
