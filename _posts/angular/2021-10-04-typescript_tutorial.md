@@ -39,6 +39,7 @@ let a: string = 0; // error
 <br/>
 
 ## 타입 종류
+
 |Type|설명|
 |----|----|
 |boolean|true와 false|
