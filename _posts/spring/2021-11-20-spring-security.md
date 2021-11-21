@@ -245,7 +245,9 @@ import javax.sql.DataSource;
 - loadUserByUsername() 를 오버라이딩 해서 구현해줘야 한다.
     - 절대로 null 을 반환하면 안된다.
     - null 을 반환하면 발생하는 Not found Exception을 구현해줘야 한다.
+
 ### 예제 코드
+
 ```java
 @Service
 public class StudyUserService implements UserDetailsService {
@@ -276,6 +278,7 @@ public class StudyUserService implements UserDetailsService {
 
 ### (4) 다시 Spring Security config 로 돌아와서 auth.userDetailesSErvice( ) 에 UserDetailService 를 집어넣는다.
 ### 예제 코드)
+
 ```java
     ....
     ....
@@ -367,6 +370,7 @@ public class StudyUserService implements UserDetailsService {
 # Spring Security Configure(HttpSecurity http) 환경설정하기
 - WebSecurityConfigurerAdpater 를 extend 해야된다.
 - configure(HttpSecurity http) 를 오버라이딩 한다.
+
 ```java
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -490,6 +494,7 @@ public class StudyUserService implements UserDetailsService {
 @ManyToOne 어노테이션
 - javax.persistence.ManyToOne
 - 모델 개체에서 이 어노테이션을 달고 다른 개체를 선언하면, 현재 개채는 선언한 개체에 속하게 된다.
+
 ```java
 @Data
 public class Order implements Serializable{
@@ -529,6 +534,7 @@ public String processOrder(@valid Order order, Errors errors, SessionStatus sess
 
 ## Authentication 객체로 로그인 사용자의 정보를 가져오는 방법
 ---
+
 ```java
 @PostMapping
 public String processOrder(@valid Order order, Errors errors, SessionStatus sessionStatus, Authentication authentication) {
@@ -602,6 +608,7 @@ public String processOrder(@valid Order order, Errors errors, SessionStatus sess
 - 해당 permit() 한 url 을 제외한 모든 요청에 대해서 401을 리턴한다.
 
 **SecurityConfiguration.java**
+
 ```java
 @Configuration
 @EnableWebSecurity
