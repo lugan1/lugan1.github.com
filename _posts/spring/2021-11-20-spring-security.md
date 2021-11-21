@@ -242,11 +242,12 @@ import javax.sql.DataSource;
 
 ### (2) 해당 유저의 권한을 갖고오는 service, mapper , xml mapper 등을 만든다.
 ### (3) 따로 User 정보를 갖고올 Service 클래스를 생성해 UserDetailService 를 implements 해서 구현한다.
+
 - loadUserByUsername() 를 오버라이딩 해서 구현해줘야 한다.
     - 절대로 null 을 반환하면 안된다.
     - null 을 반환하면 발생하는 Not found Exception을 구현해줘야 한다.
 
-### 예제 코드
+**예제 코드**
 
 ```java
 @Service
