@@ -12,6 +12,11 @@ classes: wide
 [https://www.bezkoder.com/spring-boot-jwt-auth-mongodb/](https://www.bezkoder.com/spring-boot-jwt-auth-mongodb/)
 
 <br/>
+
+# 참고 교재 : 스프링 인 액션
+[http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791190665186&orderClick=LAG&Kc=](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791190665186&orderClick=LAG&Kc=)
+### 지은이 : 크레이그 월즈 , 옮긴이 : 심재철
+<br/>
 <br/>
 
 # Spring Security
@@ -70,8 +75,13 @@ classes: wide
 ---
 - configure(HttpSecurity) : HTTP 보안을 구성하는 메소드
 - configure(AuthenticationManagerBuilder) : 사용자 인증 정보를 구성하는 메소드
-  - 사용자 스토어를 구성할때 이 메서드에서 구성한다.
+  - 사용자 스토어(store : 저장)를 구성할때 이 메서드에서 구성한다.
 
+<br/>
+
+- **위의 configure() 두개의 메소드를 사용하여 URL 에 대한 보안설정, 사용자 인증 저장방법 두개를 구성해야된다.**
+
+<br/>
 
 ### 사용자 스토어
 - 한 명 이상의 사용자를 처리할 수 있도록 사용자 정보를 유지*관리하는 사용자 스토어를 구성해야 된다.
@@ -289,7 +299,9 @@ public class StudyUserService implements UserDetailsService {
 ### (5) 데이터베이스에서 가져온 사용자 비밀번호가 암호화 되도록 비밀번호 인코더를 구성해야 한다.
 - PasswordEncoder 타입의 빈을 선언한다.
 - passwordEncoder() 를 호출하여 이 빈을 사용자 명세 서비스 구성에 주입하게 하면 된다.
+
 ### 예제 코드)
+
 ```java
     ...
     ...
@@ -370,7 +382,10 @@ public class StudyUserService implements UserDetailsService {
 <br/>
 
 ## HttpSecurity 에서 사용하는 메소드들
-### **authorizeRequests()**
+- 해당 구성 연결이 끝나고 다음 구성을 설정할때는 and() 메소드를 사용한다.
+- and() 메서드는 인증 구성이 끝나서 추가적인 HTTP 구성을 적용할 준비가 되었다는 것을 나타낸다.
+---
+## **authorizeRequests()**
 - ExpressionInterCeptUrlRegistry 객체를 반환한다.
 - antMatchers("url") 을 사용하여 해당 url 에 대한 처리를 정한다.
     - **access(String)** : 인자로 전달된 SpEL 표현식이 true면 접근을 허용한다.
@@ -392,13 +407,198 @@ public class StudyUserService implements UserDetailsService {
 <br/>
 
 - SpEL(Spring Expression Language)
-    -  
+    - 스프링 시큐리티에서는 SpEL을 확장하여 보안 관련 특정 값과 함수를 갖고 있다.
+    - **access(SpEL 표현식 문자열)** 메소드를 사용해서 적용한다. 표현식이 true면 접근을 허용 한다.
+    - **authentication** : 해당 사용자의 인증 객체
+    - **denyAll** : 항상 false를 산출한다.
+    - **hasAnyRole(역할 리스트)** : 지정된 역할 중 어느 하나라도 해당 사용자가 갖고 있으면 true
+    - **hasRole(역할)** : 지정된 역할을 해당 사용자가 갖고 있으면 true
+    - **hasIpAddress(IP 주소)** : 지정된 IP 주소로부터 해당 요청이 온 것이면 true
+    - **isAnonymous()** : 해당 사용자가 익명 사용자면 true
+    - **isAuthenticatied()** : 해당 사용자가 익명이 아닌 사용자로 인증 되었으면 true
+    - **isFullyAuthenticated()** : 해당 사용자가 익명이 아니거나 또는 remember-me 가 아닌 사용자로 인증되었으면 true
+    - **isRememberMe()** : 해당 사용자가 remember-me 기능으로 인증되었으면 true
+    - **permitAll** : 항상 true를 산출한다.
+    - **principal** : 해당 사용자의 principal 객체
+
+### SpEL 사용예제
+
+```java
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                    .antMatchers("/design","orders").access("hasRole('ROLE_USER')")
+                    .antMatchers("/","/**").access("permitAll")
+                    .anyRequest().authenticated();
+
+    }
+
+```
+
+<br/>
+<br/>
+
+## **formLogin()**
+---
+- 스프링 시큐리티의 기본제공 LoginForm 을 설정 변경한다.
+### formLogin() 메소드들
+- loginPage() : 로그인 페이지로 지정할 url. 인증되지 않으면 해당 url 로 자동 리다이렉트 된다.
+- loginProcessingUrl() : 유저name 과 password 를 제출할 url
+- defaultSuccessUrl() : 로그인이 성공하고 난 다음에 이동할 url
+    - 두번째 인자로 true 를 전달하면 사용자가 로그인 전에 어떤 페이지에 있었는지와 무관하게 로그인 후에는 무조건 해당 url 로 이동되어진다.
+- failureUrl() : 로그인이 실패할시에 이동할 url
+- usernameParameter("유저네임 혹은 ID ") : 해당 변수로 user의 id를 받아온다.
+- passwordParameter("패스워드로 사용할 변수") : 해당 변수로 user의 password 를 받아온다.
+
+<br/>
+<br/>
+
+## **logout()**
+---
+- 로그아웃을 하기 위해서 설정하는 메소드
+### logoutSuccessUrl("url") : 로그아웃이 성공한 후의 이동할 url. 설정을 안하면 자동으로 Login 페이지로 이동되어진다.
 
 
 <br/>
 <br/>
 
-### 환경설정하는 전체 소스코드
+## CSRF 공격의 의미
+### CSRF(Cross-Site Request Forgery) 크로스 사이트 요청 위조
+- 사용자가 웹사이트에 로그인한 상태에서 악의적인 코드(사이트 간의 요청을 위조하여 곡격하는)가 삽입된 페이지를 열면 공격 대상이 되는 웹사이트에 자동으로 폼이 제출된다.
+- 이 사이트는 위조된 공격 명령이 믿을 수 있는 사용자로부터 제출된 것으로 판단하게 되어 공격에 노출된다.
+- CSRF 공격을 막기 위해 어플리케이션에서는 폼의 숨김(hidden) 필드에 넣을 CSRF 토큰(token)을 생성할 수 있다.
+- 해당 필드에 토큰을 넣은 후 나중에 서버에서 사용한다.
+    - 이후에 해당 폼이 제출될 때는 폼의 다른 데이터와 함께 토큰도 서버로 전송된다.
+- 서버에서는 이 토큰을 원래 생성되었던 토큰과 비교하며, 토큰이 일치하면 해당 요청의 처리를 한다.
+- 토큰이 일치하지 않는다면 해당 폼은 토큰이 있다는 사실을 모르는 악의적인 웹사이트에서 제출된 것이다.
+
+### 스프링 시큐리티에서의 CSRF 방어
+- 스프링 시큐리티에서는 CSRF 방어기능을 설정할 수 있다.
+- CSRF 기능은 자동으로 활성화 되어있어서 별도로 설정할 필요가 없다.
+- CSRF 토큰을 넣을 _csrf 이름의 필드를 애플리케이션이 제출하는 폼에 포함시키면 된다.
+- REST API 에서 서버로 실행되는 어플리케이션의 경우 다음과 같이 CSRF 방어를 비활성화 해줘야 한다.
+
+```java
+.csrf().disable();
+```
+
+<br/>
+<br/>
+
+## 로그인 중인 사용자의 정보 관리하기
+@ManyToOne 어노테이션
+- javax.persistence.ManyToOne
+- 모델 개체에서 이 어노테이션을 달고 다른 개체를 선언하면, 현재 개채는 선언한 개체에 속하게 된다.
+```java
+@Data
+public class Order implements Serializable{
+    ...
+    private Date placedAt;
+
+    @ManyToOne
+    private User user;
+    ...
+}
+```
+
+### 로그인한 사용자의 정보를 다른 모델 객체에 주입하는 방법
+- Principal 객체를 컨트롤러 메서드에 주입한다.
+- Authentication 객체를 컨트롤러 메서드에 주입한다.
+- SecurityContextHolder를 사용해서 보안 컨텍스트를 얻는다.
+- @authenticationPrincipal 어노테이션을 사용해서 컨트롤러에 주입한다.
+
+## Principal을 이용해 로그인 사용자의 정보를 가져오는 방법
+---
+- 보안과 관련없는 코드가 혼재한다는 단점이 있다.
+
+```java
+@PostMapping
+public String processOrder(@valid Order order, Errors errors, SessionStatus sessionStatus, Principal principal) {
+    ...
+    User user = userRepository.findByUsername(principal.getName());
+    // priciipal.getName() 을 이용해 로그인한 사용자의 이름을 가져온다.
+
+    order.setUser(user);
+    ...
+}
+```
+
+<br/>
+<br/>
+
+## Authentication 객체로 로그인 사용자의 정보를 가져오는 방법
+---
+```java
+@PostMapping
+public String processOrder(@valid Order order, Errors errors, SessionStatus sessionStatus, Authentication authentication) {
+    ...
+    User user = (User) authentication.getPrincipal();
+    // authentication.getPrincipal() 을 이용해 로그인한 사용자의 정보를 가져온다.
+    // getPrincipal() 은 java.util.Object 타입을 반환하므로 USer 타입으로 변환해야 한다.
+
+    order.setUser(user);
+    ...
+}
+```
+
+<br/>
+<br/>
+
+## @AuthenticationPrincipal 을 이용해 사용자 모델을 인자로 전달해서 정보를 얻는방법
+---
+- 이 방법은 사용자 모델에 @AuthenticationPrincipal 어노테이션을 지정해야 한다.
+- 이 방법의 장점은 타입 변환이 필요없다
+- Authentication 과 동일하게 보안 특정 코드만 갖는다.
+
+```java
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+...
+import tacos.User;
+
+@PostMapping
+public String processOrder(@valid Order order, Errors errors, SessionStatus sessionStatus, @AuthenticationPrincipal User user) {
+    ...
+    if (errors.hasErrors()){
+        return "orderForm";
+    }
+
+    order.setUser(user);
+
+    sessionStatus.setComplete();
+    ...
+}
+```
+<br/>
+<br/>
+
+## SecurityContextHolder를 사용해서 보안 컨텍스트를 얻어서 로그인 사용자의 정보를 얻는방법
+---
+- 보안 컨텍스트로부터 Authentication 객체를 얻은 후 principal 객체를 요청한다.
+- 반환되는 객체를 User 타입으로 변환해야 한다.
+- 컨트롤러의 처리 메서드는 물론이고, 애플리케이션의 어디서든 사용할 수 있다.
+
+```java
+@PostMapping
+public String processOrder(@valid Order order, Errors errors, SessionStatus sessionStatus) {
+    ...
+
+    Authentication authentication = 
+        SecurityContextHolder.getContext().getAuthentication();
+    // 보안 컨텍스트로부터 Authentication 객체를 얻는다.
+
+    User user = (User) authentication.getPrincipal();
+    // Principal 객체를 요청해 로그인 사용자의 정보를 얻는다.
+    ...
+}
+```
+
+
+<br/>
+<br/>
+<br/>
+
+## Spring Security Config 환경설정하는 전체 소스코드
 - 해당 permit() 한 url 을 제외한 모든 요청에 대해서 401을 리턴한다.
 
 **SecurityConfiguration.java**
@@ -429,12 +629,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 }
 ```
-
-### formLogin() 메소드들
-- loginPage() : 로그인 페이지로 지정할 url. 인증되지 않으면 해당 url 로 자동 리다이렉트 된다.
-- loginProcessingUrl() : 유저name 과 password 를 제출할 url
-- defaultSuccessUrl() : 로그인이 성공하고 난 다음에 이동할 url
-- failureUrl() : 로그인이 실패할시에 이동할 url
 
 
 <br/>
