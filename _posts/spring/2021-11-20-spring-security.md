@@ -920,3 +920,157 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
     }
 }
 ```
+
+<br/>
+<br/>
+
+# RestAPI 로 SpringSecurity 구현하기
+## 참고 사이트 :  
+[https://cusonar.tistory.com/17](https://cusonar.tistory.com/17)
+
+<br/>
+<br/>
+
+## SpringSecurity Config 설정
+- REST API 로 사용할 것이기 때문에 formLogin() 옵션은 사용하지 않는다.
+- 회원가입 url, 중복 확인 url 은 접근을 허용한다.
+- 그외에 /user 혹은 /admin 은 각각에 대한 권한을 요구한다.
+
+```java
+.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER)
+// 사용자의 쿠키에 세션을 저장하지 않겠다는 옵션이다.
+// NEVER : Security 등 내부적으로 세션을 만드는 것을 허용한다.
+// STATELESS : 사용자의 쿠키에 세션을 포함한 아무것도 저장하지 않는다.
+// Rest 아키텍쳐는 Sateless를 조건으로 하기때문에 되도록이면 stateless가 좋다.
+
+.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+// 크롬과 같은 브라우저 에서는 실제 GET, POST 를 요청하기 전에 OPTIONS를 preflight 요청을 한다.
+// 이는 실제로 서버가 살아있는지를 확인하는 요청이다.
+// Spring 에서는 OPTIONS에 대한 요청을 자동으로 막고있다.
+// 따라서 OPTIONS 요청이 들어와도 허용하도록 변경한다.
+
+@Bean
+public HttpSessionStrategy httpSessionStrategy() {
+    return new HeaderHttpSessionStrategy();
+}
+//  HttpSession 전략으로 쿠키의 세션을 사용하는 대신 header에 'x-auth-token' 값을 사용할 수 있게 해준다.
+
+```
+
+
+
+```java
+.csrf().disable()
+.sessionManagement()
+    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+    .and()
+.authorizeRequests()
+    .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+    .antMatchers("/user/login").permitAll()
+    .antMatchers("/user/insertUser").permitAll()
+    .antMatchers("/user/existsId").permitAll()
+    .antMatchers("/user/existsName").permitAll()
+    .antMatchers("/user").hasAuthority("USER")
+    .antMatchers("/admin").hasAuthority("ADMIN")
+    .anyRequest().authenticated()
+    .and()
+.formLogin()
+    .and()
+.logout()
+```
+
+<br/>
+<br/>
+
+### authenticationManagerBean() 을 오버라이딩 한다.
+- 사용되는 인증 객체를 Bean으로 등록할 때 사용한다.
+- @bean 어노테이션을 붙여서 다른 클래스에서도 authenticationManager 객체를 사용할수 있게한다.
+- 다른 클래스에서 사용시에 @Autowired 어노테이션을 붙이면 일일히 new 객체를 안만들어도 된다.
+```java
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+```
+
+<br/>
+<br/>
+
+## URL( /user ) 으로 시작되는 url 들을 컨트롤할 UserController 커스텀 클래스를 새로 만든다.
+- AuthenticationManager 객체를 사용해야 되기 때문에 선언한다.
+- @Autowired 로 Bean 객체를 주입해 따로 new 객체로 객체를 생성안해도 된다.
+    - SpringSecurity Config 에서 아까 @bean 으로 어노테이션 붙였기 때문에 다른곳에서도 가져다가 쓸수있음. (new 객체를 안해도됨)
+
+<br/>
+<br/>
+
+## 로그인하면 사용자 정보를 저장할 AuthenticationToken VO 클래스를 새로 만든다.
+- 별거없다. 걍 커스텀 클래스인데, 사용자 이름, 권한, 토큰 문자열 필드를 갖는 커스텀 클래스다.
+- 필드 목록
+    - String username
+    - Collection authorities
+    - String token
+- 필드들은 다 private로 선언해줘야 한다.
+- get/set/constructer 를 만든다.
+- @Data 를 붙여서 롬북으로 하면 안만들어도 될듯하다.
+- 각 필드를 갖는 Construct 만 만든다. (생성자)
+
+<br/>
+<br/>
+
+## 로그인 정보를 담는 Login Vo 모델 클래스를 만든다.
+- 예제에서는 임의로 AhtenticationRequest 명으로 만들었다.
+- 필드 목록
+    - String id;
+    - String password;
+- 각 필드들은 private 로 선언해줘야 한다.
+- 생성자는 안만들어줘도 된다.
+- @Data 로 롬북 처리를 하면 될것같다.    
+
+
+## 다음과 같이 Login 을 처리할 API를 생성한다.
+- 반환 자료형은 AuthenticationToken Vo를 반환하도록 API 컨트롤러를 만든다.
+- 클라이언트로부터 받는 것은 JSON 객체를 받도록 한다.
+- 객체 자료형은 AuthenticationRequest 를 받도록 한다.
+- HttpSession 객체도 받도록 매개변수를 설정한다.
+- API에서 총 받아야되는 매개변수
+    - RequestBody AuthenticationRequest 객체
+    - HttpSession 객체
+
+<br/>
+<br/>
+
+**로그인 API 전체 코드**
+
+```java
+    @PostMapping("/login")
+    public StudyAthenticationToken Login(@RequestBody StudyAuthenticationRequest studyAuthenticationRequest, HttpSession httpSession){
+        String id = studyAuthenticationRequest.getId();
+        String password = studyAuthenticationRequest.getPassword();
+        // JSON 으로 받은 id 와 password 를 꺼내서 문자열 변수에 집어넣는다.
+
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(id, password);
+        // 요청받은 id 와 password 로 토큰 객체를 만든다.
+
+        Authentication authentication = authenticationManager.authenticate(token);
+        // 토큰 객체로 Spring Security 에서 설정한 인증 절차를 진행한다. 이때 SpringSecurity 에서 설정한 인증절차가 적용되어 진행된다.
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        // 인증 받은 결과를 SecurityContextHolder.getContext() 로 얻어온다.
+        // Spring Security context 에 해당 인증 결과를 설정한다.
+        // 이로써 서버의 SecurityContext 에는 인증값 설정이 완료된다.
+
+        httpSession.setAttribute(
+                HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+                SecurityContextHolder.getContext());
+        // API 의 매개변수로 HttpSession 객체를 지정하면 session 을 받아올수 있다.
+        // session 값에 인증이 완료된 SpringSecurityContext 를 설정한다.
+        // 이때 속성키는 HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY 으로 넣어주면 된다.
+
+        StudyUser studyUser = studyAuthService.selectByID(id);
+        // 인증이 완료되었으면 해당 유저가 DB에 있다는 뜻이니 해당 유저의 정보를 가져와서 해당 유저vo 를 만든다.
+
+        return new StudyAthenticationToken(studyUser.getId(), studyUser.getAuthorities(), httpSession.getId());
+        // 해당 유저의 id , 권한, session ID 를 Toekn 객체로 만들어서 리턴한다.
+    }
+```
