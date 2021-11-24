@@ -655,7 +655,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 <br/>
 <br/>
 
-# Spring Security 사용 Inteceptor 만들기
+# Spring Security 사용 로그인 처리하기
 ### 참고사이트 :  
 [https://soon-devblog.tistory.com/5?category=1026232](https://soon-devblog.tistory.com/5?category=1026232)
 
@@ -718,6 +718,14 @@ Provider는 Token에 있는 계정정보가 유효한지 DB로부터 조회한�
 계정 정보가 유효하면 Filter는 SusccesHandler에 따라 요청을 redirect 시킨다.
 
 <br/>
+
+### SpringSecurity의 Authenticate 과정을 그림으로 표현하면 이런 프로세스로 진행된다.
+
+**SpringSecurity Authenticate 진행과정**
+
+![process_springSecuriy_authenticate.png](/assets\image\posts_image/process_springSecuriy_authenticate.png)
+
+
 <br/>
 <br/>
 
@@ -957,6 +965,8 @@ public HttpSessionStrategy httpSessionStrategy() {
 
 ```
 
+<br/>
+<br/>
 
 
 ```java
@@ -1073,4 +1083,60 @@ public HttpSessionStrategy httpSessionStrategy() {
         return new StudyAthenticationToken(studyUser.getId(), studyUser.getAuthorities(), httpSession.getId());
         // 해당 유저의 id , 권한, session ID 를 Toekn 객체로 만들어서 리턴한다.
     }
+```
+
+<br/>
+
+## AuthenticationManager
+- 인증 절차 메소드를 모아둔 객체
+- authenticate ( 인증받을 객체 ) 메소드를 실행하면 인증절차를 진행한다.
+- 인증이 실패하면 BadCredentialsException 이 발생한다.
+- 계정이 비활성화 된 경우 DisabledException 이 발생한다.
+- 계정이 잠겨있는 경우 LockedException 이 발생한다.
+- 계정의 ID 를 찾을수 없으면 UsernameNotFoundException 이 발생한다.
+
+### Spring Security Config 에 authenticationManagerBean() 을 오버라이딩 하면 원하는 시점에 AuthenticationManager를 사용할 수 있다.
+- @bean 어노테이션도 추가로 달아야 다른곳에서 객체를 가져다가 쓸수 있다.
+
+<br/>
+<br/>
+
+## Authenticate() 각 exception 별로 관리하는 방법
+
+```java
+@RequiredArgsConstructor // add lombok inject
+public class SecurityController {
+
+    private final AuthenticationManager authenticationManager; // @Autowired
+
+    // ...
+
+    @PostMapping(value = "/my-login")
+    public String customLoginProcess(
+            @RequestParam String username,
+            @RequestParam String password
+    ) {
+       // 아이디와 패스워드로, Security 가 알아 볼 수 있는 token 객체로 변경한다.
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, password);
+        try {
+            // AuthenticationManager 에 token 을 넘기면 UserDetailsService 가 받아 처리하도록 한다.
+            Authentication authentication = authenticationManager.authenticate(token);
+            // 실제 SecurityContext 에 authentication 정보를 등록한다.
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+        } catch (DisabledException | LockedException | BadCredentialsException e) {
+            String status;
+            if (e.getClass().equals(BadCredentialsException.class)) {
+                status = "invalid-password";
+            } else if (e.getClass().equals(DisabledException.class)) {
+                status = "locked";
+            } else if (e.getClass().equals(LockedException.class)) {
+                status = "disable";
+            } else {
+                status = "unknown";
+            }
+            return "redirect:/login?flag=" + status;
+        }
+        return "redirect:/";
+    }
+}
 ```
