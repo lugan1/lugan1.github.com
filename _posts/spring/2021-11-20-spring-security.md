@@ -725,6 +725,9 @@ Provider는 Token에 있는 계정정보가 유효한지 DB로부터 조회한�
 
 ![process_springSecuriy_authenticate.png](/assets\image\posts_image/process_springSecuriy_authenticate.png)
 
+<br/>
+
+![process_springSecuriy_authenticate2.png](/assets\image\posts_image/process_springSecuriy_authenticate2.png)
 
 <br/>
 <br/>
@@ -1089,6 +1092,10 @@ public HttpSessionStrategy httpSessionStrategy() {
 
 ## AuthenticationManager
 - 인증 절차 메소드를 모아둔 객체
+- 등록한 AuthenticationProvvider들을 연쇄적으로 실행시킨다.
+    - AuthenticationProvider 들의 구현체에서는 다음과 같은 작업이 필요하다.
+    - 1) 매개변수로 들어온 Authentication 객체에 있는 계정 정보가 DB에 들어있는지 확인하는 작업
+    - 2) DB 에 계정 정보가 들어있으면 유저의 상세 정보를 이용해 새로운 UserPasswordAuthenticationToken 을 발급하는 코드 작성
 - authenticate ( 인증받을 객체 ) 메소드를 실행하면 인증절차를 진행한다.
 - 인증이 실패하면 BadCredentialsException 이 발생한다.
 - 계정이 비활성화 된 경우 DisabledException 이 발생한다.
@@ -1099,6 +1106,27 @@ public HttpSessionStrategy httpSessionStrategy() {
 - @bean 어노테이션도 추가로 달아야 다른곳에서 객체를 가져다가 쓸수 있다.
 
 <br/>
+
+## AuthenticationProvider
+- AuthenticationManager.authenticate(인증객체) 를 실행할때 순차적으로 실행되는 인증 절차
+- SpringSecurity Config 에 다음과 같이 커스텀 AuthenticationProvider를 등록할 수있다.
+
+```java
+    @Autowired
+    private AuthProvider authProvider;
+    // 사용자가 직접만든 커스텀 클래스
+    // 해당 클래스는 AuthenticationProvider를 implements 해야된다.
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            ...
+            ...
+            .authenticationProvider(authProvider);
+```
+
+
+
 <br/>
 
 ## Authenticate() 각 exception 별로 관리하는 방법
