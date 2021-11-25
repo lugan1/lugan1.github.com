@@ -245,7 +245,7 @@ export interface ListResponse {
 
 백엔드 게시글VO 예제)
 ```java
-package kr.co.inphrcare.study.api.model.study;
+package kr.co.test.study.api.model.study;
 
 import lombok.Builder;
 import lombok.Data;
