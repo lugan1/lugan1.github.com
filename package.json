@@ -1,11 +1,11 @@
 {
-  "name": "minimal-mistakes",
+  "name": "lugan",
   "private": true,
   "version": "4.22.0",
-  "description": "Minimal Mistakes 2 column Jekyll theme.",
+  "description": "lugan의 공부 블로그",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mmistakes/minimal-mistakes.git"
+    "url": "https://github.com/lugan1/lugan1.github.io.git"
   },
   "keywords": [
     "jekyll",
